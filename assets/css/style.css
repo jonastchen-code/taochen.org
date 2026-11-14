@@ -92,3 +92,10 @@ footer.site p{margin:0 0 .3rem}
   main.wrap{padding-top:1.5rem}
 }
 @media print{ header.site nav,.search,footer.site{display:none} a{color:inherit;text-decoration:none} }
+
+/* Paper entries and pages */
+.label{font-weight:600}
+.year{font-weight:600;color:var(--ink)}
+p.pdf{margin:.6rem 0 0}
+.backnav{margin-top:2rem;padding-top:1rem;border-top:1px solid var(--rule);font-size:var(--fs-small)}
+article details{margin-top:.25rem}

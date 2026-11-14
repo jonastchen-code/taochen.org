@@ -2,6 +2,7 @@
 import os, re, sys, json, html
 sys.path.insert(0, os.path.dirname(__file__))
 from data import PROGRAMS, PUBS, FT50, UTD24, NATURE_INDEX
+from papers_extra import EXTRA, DRNTU_ABSTRACTS
 from content import *  # page content
 
 OUT = sys.argv[1]
@@ -11,7 +12,7 @@ UPDATED = "14 November 2026"
 NAME = "Tao (Jonas) Chen"
 E = lambda s: html.escape(str(s), quote=True)
 
-NAV = [("/", "Home"), ("/research/", "Research"), ("/teaching/", "Teaching"), ("/service/", "Service"),
+NAV = [("/", "Home"), ("/papers.html", "Research"), ("/teaching/", "Teaching"), ("/service/", "Service"),
        ("/awards/", "Awards"), ("/talks/", "Keynotes and Seminars"), ("/media/", "Media")]
 
 # ---------- helpers ----------
@@ -45,6 +46,11 @@ for p in PUBS:
     p["slug"] = "-".join(words[:4]) + f"-{ABBR[p['journal']]}-{p['year']}"
     p["first_family"] = p["authors"][0].split()[-1]
 assert len({p["slug"] for p in PUBS}) == len(PUBS)
+for p in PUBS:
+    x = EXTRA[p["doi"]]
+    p.update(one=x["one"], summary=x["summary"], pdf=x["pdf"], pdf_label=x.get("pdf_label", ""), pdf_note=x.get("pdf_note", ""))
+    p["finding"] = p["one"]
+    if not p["abstract"]: p["abstract"] = DRNTU_ABSTRACTS.get(p["doi"], "")
 PUBS.sort(key=lambda p: (-p["year"], -p["month"]))
 
 def cite_line(p):
@@ -117,13 +123,26 @@ def page(path, title, body, desc, active=None, head_extra="", jsonld=None, page_
     os.makedirs(os.path.dirname(fp), exist_ok=True)
     open(fp, "w").write(doc)
 
-def pub_item(p, show_prog=False):
-    return f"""<li class="paper" data-search="{E((p['title']+' '+' '.join(p['authors'])+' '+p['journal']+' '+str(p['year'])+' '+p['finding']).lower())}">
+PAPERS = "/papers.html"
+
+def pdf_link(p, cls=""):
+    if p["pdf"]:
+        return f'<a href="{E(p["pdf"])}"{cls}>PDF<span class="vh"> of {E(p["display"])}</span></a> <span class="meta">({E(p["pdf_label"])})</span>'
+    return f'<span class="meta">PDF not yet publicly available. {E(p["pdf_note"])}</span>'
+
+def status(p):
+    s = f"Published in <cite>{E(p['journal'])}</cite> {E(p['vol'])}"
+    if p["issue"]: s += f"({E(p['issue'])})"
+    return s + f": {E(p['pages'])}"
+
+def pub_item(p):
+    text = (p['title']+' '+' '.join(p['authors'])+' '+p['journal']+' '+str(p['year'])+' '+p['one']).lower()
+    return f"""<li class="paper" data-search="{E(text)}">
 <h3 class="paper-title"><a href="/research/{p['slug']}/">{E(p['display'])}</a></h3>
 <p class="byline">{authors_html(p['authors'])}</p>
-<p class="venue"><cite>{E(p['journal'])}</cite> {E(p['vol'])}{f"({E(p['issue'])})" if p['issue'] else ""}, {p['year']}</p>
-<p class="finding">{E(p['finding'])}</p>
-<p class="links"><a href="/research/{p['slug']}/">Abstract and citation</a> · <a href="https://doi.org/{p['doi']}">Publisher version <span class="vh">for {E(p['display'])}</span></a></p>
+<p class="venue"><span class="year">{p['year']}</span> · {status(p)}</p>
+<p class="finding"><span class="label">In one sentence:</span> {E(p['one'])}</p>
+<p class="links"><a href="/research/{p['slug']}/">Paper page<span class="vh">: {E(p['display'])}</span></a> · {pdf_link(p)}</p>
 </li>"""
 
 # ---------- Home ----------
@@ -134,7 +153,7 @@ def home():
     rec = "".join(f'<li><a href="/research/{p["slug"]}/">{E(p["display"])}</a> <span class="meta">— <cite>{E(p["journal"])}</cite>, {p["year"]}</span></li>' for p in recent)
     pos = "".join(f'<li><span class="yr">{E(y)}</span> {E(t)}</li>' for y, t in POSITIONS)
     edu = "".join(f'<li><span class="yr">{E(y)}</span> {E(t)}</li>' for y, t in EDUCATION)
-    progs = "".join(f'<li><a href="/research/#{pid}">{E(name)}</a></li>' for pid, name, _ in PROGRAMS)
+    progs = "".join(f'<li><a href="{PAPERS}#{pid}">{E(name)}</a></li>' for pid, name, _ in PROGRAMS)
     body = f"""<div class="intro">
 <h1>{E(NAME)}</h1>
 <p class="role">Provost’s Chair Professor in Finance<br>Nanyang Business School, Nanyang Technological University, Singapore</p>
@@ -154,7 +173,7 @@ def home():
 <section aria-labelledby="h-recent">
 <h2 id="h-recent">Recent publications</h2>
 <ul class="recent">{rec}</ul>
-<p><a href="/research/">All {len(PUBS)} publications</a></p>
+<p><a href="{PAPERS}">All {len(PUBS)} papers</a></p>
 </section>
 <div class="two">
 <section aria-labelledby="h-pos"><h2 id="h-pos">Positions</h2><ul class="dated">{pos}</ul></section>
@@ -164,7 +183,7 @@ def home():
           "mainEntity": PERSON}
     page("/", NAME, body, HOME_DESC, active="/", jsonld=ld)
 
-# ---------- Research ----------
+# ---------- Papers ----------
 def research():
     secs = []
     for pid, name, desc in PROGRAMS:
@@ -172,24 +191,27 @@ def research():
         secs.append(f"""<section class="program" id="{pid}" aria-labelledby="h-{pid}">
 <h2 id="h-{pid}">{E(name)} <span class="count">({len(ps)})</span></h2>
 <p class="program-desc">{E(desc)}</p>
-<ol class="papers" reversed>{''.join(pub_item(p) for p in ps)}</ol>
+<ol class="papers">{''.join(pub_item(p) for p in ps)}</ol>
 </section>""")
     toc = " · ".join(f'<a href="#{pid}">{E(n)}</a>' for pid, n, _ in PROGRAMS)
-    body = f"""<h1>Research</h1>
-<p>{len(PUBS)} published articles, grouped into three research programs and listed newest first within each. Each title links to a page with the abstract and citation; “Publisher version” links to the article’s DOI.</p>
+    body = f"""<h1>Research papers</h1>
+<p>{len(PUBS)} published articles, grouped into three research programs and listed newest first within each. Each entry links to a paper page with a summary and citation, and to a freely available PDF where one exists.</p>
 <p class="toc">{toc}</p>
 <div class="search" hidden>
-<label for="q">Search publications</label>
+<label for="q">Search papers</label>
 <input id="q" type="search" placeholder="Title, co-author, journal, year or topic" autocomplete="off">
 <p id="q-status" class="meta" aria-live="polite"></p>
 </div>
 {''.join(secs)}
-<p class="meta">Citation counts and working papers: <a href="{SCHOLAR}">Google Scholar</a>, <a href="{SSRN}">SSRN</a>. All entries as BibTeX: <a href="/research/publications.bib">publications.bib</a>.</p>
+<p class="meta">Citation counts: <a href="{SCHOLAR}">Google Scholar</a>. Working papers: <a href="{SSRN}">SSRN</a>. All entries as BibTeX: <a href="/research/publications.bib">publications.bib</a>.</p>
 <script src="/assets/js/search.js" defer></script>"""
-    ld = {"@context": "https://schema.org", "@type": "CollectionPage", "name": "Research — " + NAME, "url": SITE + "/research/",
+    ld = {"@context": "https://schema.org", "@type": "CollectionPage", "name": "Research papers — " + NAME, "url": SITE + PAPERS,
           "author": {"@id": SITE + "/#person"},
           "hasPart": [{"@type": "ScholarlyArticle", "name": p["title"], "url": f"{SITE}/research/{p['slug']}/", "sameAs": "https://doi.org/" + p["doi"]} for p in PUBS]}
-    page("/research/", "Research", body, f"Published research by {NAME} in sustainable finance; FinTech, AI, and finance; and investors, monitors and corporate policy.", active="/research/", jsonld=ld)
+    page(PAPERS, "Research papers", body, f"Published research by {NAME} in sustainable finance; FinTech, AI, and finance; and investors, monitors and corporate policy.", active=PAPERS, jsonld=ld)
+    # old address /research/ forwards to the papers page
+    os.makedirs(os.path.join(OUT, "research"), exist_ok=True)
+    open(os.path.join(OUT, "research", "index.html"), "w").write(f'<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Research papers</title><link rel="canonical" href="{SITE}{PAPERS}"><meta http-equiv="refresh" content="0; url={PAPERS}"><meta name="robots" content="noindex"></head><body><p>This page has moved to <a href="{PAPERS}">Research papers</a>.</p></body></html>\n')
     for p in PUBS:
         paper_page(p)
     open(os.path.join(OUT, "research", "publications.bib"), "w").write("\n\n".join(bibtex(p) for p in PUBS) + "\n")
@@ -207,30 +229,33 @@ def paper_page(p):
     if len(pg) > 1: meta.append(f'<meta name="citation_lastpage" content="{E(pg[1])}">')
     meta.append(f'<meta name="citation_doi" content="{E(p["doi"])}">')
     if p["abstract"]: meta.append(f'<meta name="citation_abstract" content="{E(p["abstract"])}">')
+    if p["pdf"] and p["pdf"].startswith("/"): meta.append(f'<meta name="citation_pdf_url" content="{SITE}{p["pdf"]}">')
     ld = {"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": p["title"][:110], "name": p["title"],
           "author": [{"@type": "Person", "name": a, **({"@id": SITE + "/#person", "url": SITE + "/"} if a == "Tao Chen" else {})} for a in p["authors"]],
           "datePublished": f"{p['year']}-{p['month']:02d}", "sameAs": "https://doi.org/" + p["doi"],
           "identifier": {"@type": "PropertyValue", "propertyID": "DOI", "value": p["doi"]},
           "isPartOf": {"@type": "PublicationVolume", "volumeNumber": p["vol"], "isPartOf": {"@type": "Periodical", "name": p["journal"]}},
-          "pagination": p["pages"], "about": prog, "url": f"{SITE}/research/{p['slug']}/"}
+          "pagination": p["pages"], "about": prog, "url": f"{SITE}/research/{p['slug']}/", "description": p["one"]}
     if p["abstract"]: ld["abstract"] = p["abstract"]
-    ab = f'<section aria-labelledby="h-ab"><h2 id="h-ab">Abstract</h2><p>{E(p["abstract"])}</p></section>' if p["abstract"] else \
-         f'<section aria-labelledby="h-ab"><h2 id="h-ab">Abstract</h2><p>The abstract is available from the <a href="https://doi.org/{p["doi"]}">publisher</a>.</p></section>'
-    apa = f'{", ".join(p["authors"])} ({p["year"]}). {p["title"]}. <cite>{E(p["journal"])}</cite>, {E(p["vol"])}{f"({E(p["issue"])})" if p["issue"] else ""}, {E(p["pages"])}. https://doi.org/{p["doi"]}'
-    body = f"""<p class="crumb"><a href="/research/">Research</a> › <a href="/research/#{p['prog']}">{E(prog)}</a></p>
+    if p["pdf"]: ld["encoding"] = {"@type": "MediaObject", "encodingFormat": "application/pdf", "contentUrl": (SITE + p["pdf"]) if p["pdf"].startswith("/") else p["pdf"]}
+    ab = f'<details><summary>Abstract as published</summary><p>{E(p["abstract"])}</p></details>' if p["abstract"] else ""
+    apa = f'{E(", ".join(p["authors"]))} ({p["year"]}). {E(p["title"])}. <cite>{E(p["journal"])}</cite>, {E(p["vol"])}{f"({E(p["issue"])})" if p["issue"] else ""}, {E(p["pages"])}. <a href="https://doi.org/{p["doi"]}">https://doi.org/{p["doi"]}</a>'
+    back = f'<a href="{PAPERS}#{p["prog"]}">{E(prog)}</a>'
+    body = f"""<p class="crumb"><a href="{PAPERS}">Research papers</a> › {back}</p>
 <article>
 <h1 class="paper-h1">{E(p['display'])}</h1>
 <p class="byline">{authors_html(p['authors'])}</p>
-<p class="venue"><cite>{E(p['journal'])}</cite> {E(p['vol'])}{f"({E(p['issue'])})" if p['issue'] else ""}: {E(p['pages'])}, {p['year']}</p>
-<p class="links"><a href="https://doi.org/{p['doi']}">Publisher version</a> (DOI {E(p['doi'])}) · <a href="https://scholar.google.com/scholar?q={E(html.escape(p['doi']))}">Google Scholar</a></p>
-<section aria-labelledby="h-find"><h2 id="h-find">Main finding</h2><p>{E(p['finding'])}</p></section>
-{ab}
+<p class="venue"><span class="year">{p['year']}</span> · {status(p)} · DOI <a href="https://doi.org/{p['doi']}">{E(p['doi'])}</a></p>
+<p class="pdf">{pdf_link(p)}</p>
+<section aria-labelledby="h-one"><h2 id="h-one">In one sentence</h2><p>{E(p['one'])}</p></section>
+<section aria-labelledby="h-sum"><h2 id="h-sum">Summary</h2><p>{E(p['summary'])}</p>{ab}</section>
 <section aria-labelledby="h-cite"><h2 id="h-cite">Citation</h2>
 <p class="cite">{apa}</p>
 <details><summary>BibTeX</summary><pre><code>{E(bibtex(p))}</code></pre></details>
 </section>
-</article>"""
-    page(f"/research/{p['slug']}/", p["display"], body, p["finding"], active="/research/", head_extra="\n".join(meta) + "\n", jsonld=ld)
+</article>
+<nav class="backnav" aria-label="Back"><p>← More in {back} · <a href="{PAPERS}">All research papers</a></p></nav>"""
+    page(f"/research/{p['slug']}/", p["display"], body, p["one"], active=PAPERS, head_extra="\n".join(meta) + "\n", jsonld=ld)
 
 # ---------- Simple pages ----------
 def simple(path, title, body, desc):
@@ -245,11 +270,11 @@ def build_pages():
     simple("/awards/", "Awards", AWARDS_HTML(dated), f"Research, teaching and service awards received by {NAME}.")
     simple("/talks/", "Keynotes and Seminars", TALKS_HTML(dated), f"Keynote speeches and invited seminars given by {NAME}.")
     simple("/media/", "Media", MEDIA_HTML(dated), f"Media interviews, commentary and press coverage of research by {NAME}.")
-    page("/404.html", "Page not found", '<h1>Page not found</h1><p>The page you asked for does not exist. Try the <a href="/">home page</a> or the <a href="/research/">list of publications</a>.</p>', "Page not found.")
+    page("/404.html", "Page not found", '<h1>Page not found</h1><p>The page you asked for does not exist. Try the <a href="/">home page</a> or the <a href="/papers.html">list of research papers</a>.</p>', "Page not found.")
 
 # ---------- Machine-readable files ----------
 def extras():
-    urls = ["/", "/research/", "/teaching/", "/service/", "/awards/", "/talks/", "/media/"] + [f"/research/{p['slug']}/" for p in PUBS]
+    urls = ["/", "/papers.html", "/teaching/", "/service/", "/awards/", "/talks/", "/media/"] + [f"/research/{p['slug']}/" for p in PUBS]
     sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + \
          "".join(f"  <url><loc>{SITE}{u}</loc><lastmod>{UPDATED_ISO}</lastmod></url>\n" for u in urls) + "</urlset>\n"
     open(os.path.join(OUT, "sitemap.xml"), "w").write(sm)
@@ -262,10 +287,10 @@ def extras():
     for pid, name, desc in PROGRAMS:
         lines += ["", f"## Publications — {name}", "", desc, ""]
         for p in [p for p in PUBS if p["prog"] == pid]:
-            lines.append(f"- [{p['title']}]({SITE}/research/{p['slug']}/) — {', '.join(p['authors'])}. {p['journal']} {p['vol']}, {p['year']}. DOI {p['doi']}. Finding: {p['finding']}")
+            lines.append(f"- [{p['title']}]({SITE}/research/{p['slug']}/) — {', '.join(p['authors'])}. {p['journal']} {p['vol']}, {p['year']}. DOI {p['doi']}. In one sentence: {p['one']}" + (f" PDF: {p['pdf'] if p['pdf'].startswith('http') else SITE + p['pdf']}" if p['pdf'] else ""))
     open(os.path.join(OUT, "llms.txt"), "w").write("\n".join(lines) + "\n")
     os.makedirs(os.path.join(OUT, "data"), exist_ok=True)
-    json.dump([{k: p[k] for k in ("title", "authors", "journal", "year", "vol", "issue", "pages", "doi", "prog", "finding", "abstract", "slug")} for p in PUBS],
+    json.dump([{k: p[k] for k in ("title", "authors", "journal", "year", "vol", "issue", "pages", "doi", "prog", "one", "summary", "pdf", "pdf_label", "abstract", "slug")} for p in PUBS],
               open(os.path.join(OUT, "data", "publications.json"), "w"), ensure_ascii=False, indent=1)
 
 os.makedirs(OUT, exist_ok=True)
