@@ -128,7 +128,8 @@ def pub_item(p, show_prog=False):
 
 # ---------- Home ----------
 def home():
-    recent = PUBS[:5]
+    # Nature Climate Change paper listed first (Jonas, 14 Nov 2026), then newest.
+    recent = sorted(PUBS, key=lambda p: p["journal"] != "Nature Climate Change")[:5]
     stats = "".join(f'<div class="stat"><dt>{E(l)}</dt><dd>{E(v)}</dd></div>' for v, l in STATS)
     rec = "".join(f'<li><a href="/research/{p["slug"]}/">{E(p["display"])}</a> <span class="meta">— <cite>{E(p["journal"])}</cite>, {p["year"]}</span></li>' for p in recent)
     pos = "".join(f'<li><span class="yr">{E(y)}</span> {E(t)}</li>' for y, t in POSITIONS)
