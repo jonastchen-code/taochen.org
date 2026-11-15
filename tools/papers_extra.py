@@ -7,9 +7,9 @@
 def ssrn(n): return f"https://papers.ssrn.com/sol3/Delivery.cfm?abstractid={n}"
 def drntu(u): return f"https://dr.ntu.edu.sg/server/api/core/bitstreams/{u}/content"
 
-PUB_OA = "Published version (open access)"
-AAM = "Accepted manuscript (DR-NTU repository)"
-SSRN_V = "Working-paper version (SSRN)"
+PUB_OA = "Published version, open access"
+AAM = "Accepted manuscript, DR-NTU repository"
+SSRN_V = "Working-paper version, SSRN"
 
 EXTRA = {
  "10.1038/s41558-026-02657-2": dict(pdf=None, pdf_note="The accepted manuscript in NTU’s DR-NTU repository is under embargo until 31 January 2027.",
@@ -24,7 +24,7 @@ EXTRA = {
  "10.1016/j.jfineco.2019.06.007": dict(pdf=drntu("233ea276-ae9e-48aa-a0e6-3da3f18295f3"), pdf_label=AAM,
   one="Institutional shareholders improve the social and environmental performance of the firms they own.",
   summary="The paper uses two quasi-natural experiments to identify the effect of institutional shareholders on corporate social responsibility (CSR). An exogenous increase in institutional ownership from Russell index reconstitutions improves portfolio firms’ CSR performance, and firms receive lower CSR ratings when their shareholders are exogenously distracted. The effect is stronger in CSR categories that are financially material. Institutional shareholders influence CSR through CSR-related shareholder proposals. The results suggest that institutional investors can generate real social impact."),
- "10.1017/S0022109017000576": dict(pdf=drntu("62dbf0a8-be0d-4091-b4f0-bfcd5bfcdaea"), pdf_label="Published version (DR-NTU repository)",
+ "10.1017/S0022109017000576": dict(pdf=drntu("62dbf0a8-be0d-4091-b4f0-bfcd5bfcdaea"), pdf_label="Published version, DR-NTU repository",
   one="Firms avoid taxes more aggressively after they lose analyst coverage, which raises information asymmetry.",
   summary="The paper asks whether information asymmetry affects corporate tax avoidance. It uses reductions in analyst coverage caused by broker closures and mergers, with a difference-in-differences matching estimator. Firms avoid tax more aggressively after losing an analyst. The effect is driven by firms with greater existing tax-planning capacity (such as a tax-haven presence), smaller initial coverage and fewer peer firms. It is stronger in industries where reputation matters more and in firms that face less monitoring from tax authorities."),
  "10.1111/acfi.12773": dict(pdf=ssrn(2966014), pdf_label=SSRN_V,
