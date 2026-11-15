@@ -43,7 +43,8 @@ h2{font-size:var(--fs-h2);margin:2.25rem 0 .75rem;padding-bottom:.3rem;border-bo
 h3{font-size:var(--fs-body);line-height:1.4;margin:0}
 p{margin:0 0 .9rem}
 cite{font-style:italic}
-.meta,.byline,.venue,.crumb,.count,.links,.yr,.toc,label{font-size:var(--fs-small)}
+.meta,.byline,.venue,.crumb,.count,.links,.yr,label{font-size:var(--fs-small)}
+.toc{font-size:var(--fs-body)}
 .meta,.count,.crumb,.yr{color:var(--muted)}
 .count{font-family:var(--sans);font-weight:400}
 

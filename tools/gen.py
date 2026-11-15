@@ -210,9 +210,13 @@ def home():
 
 CLOUD_ALT = ("Word cloud of research topics in the shape of a world map. The largest words are sustainable finance, "
              "corporate governance, artificial intelligence, FinTech, ESG, financial analysts and tax avoidance.")
+def img_v(fname):  # content hash, so browsers fetch a redrawn image instead of a cached copy
+    import hashlib
+    with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "assets", "img", fname), "rb") as f:
+        return f"/assets/img/{fname}?v=" + hashlib.md5(f.read()).hexdigest()[:8]
 def cloud(name, w, h):
-    return (f'<picture><source srcset="/assets/img/{name}-dark.png" media="(prefers-color-scheme: dark)">'
-            f'<img src="/assets/img/{name}.png" width="{w}" height="{h}" alt="{E(CLOUD_ALT)}" loading="lazy" decoding="async"></picture>')
+    return (f'<picture><source srcset="{img_v(name + "-dark.png")}" media="(prefers-color-scheme: dark)">'
+            f'<img src="{img_v(name + ".png")}" width="{w}" height="{h}" alt="{E(CLOUD_ALT)}" loading="lazy" decoding="async"></picture>')
 
 # ---------- Papers ----------
 def research():
