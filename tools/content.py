@@ -181,11 +181,11 @@ def MEDIA_HTML(dated):
     def tvrow(t, o, link, vid):
         vid, _, start = vid.partition("@")
         url = f"https://www.youtube.com/watch?v={vid}" + (f"&t={start}s" if start else "")
-        h = (f'<span class="vid"><a class="thumb" href="{url}" aria-hidden="true" tabindex="-1">'
-             f'<img src="https://i.ytimg.com/vi/{vid}/mqdefault.jpg" width="128" height="72" loading="lazy" alt=""></a>'
-             f'<span><a href="{url}">{E(t)}</a>, <cite>{E(o)}</cite>')
+        icon = ('<svg class="yt-ico" viewBox="0 0 28 20" width="21" height="15" aria-hidden="true" focusable="false">'
+                '<rect width="28" height="20" rx="5" fill="#d42020"/><path d="M11 5.5v9l8-4.5z" fill="#fff"/></svg>')
+        h = f'<a href="{E(url)}">{E(t)}</a>, <cite>{E(o)}</cite> <a class="yt" href="{E(url)}" aria-label="Watch on YouTube">{icon}</a>'
         if link: h += f' · <a href="{E(link)}">Article</a>'
-        return h + "</span></span>"
+        return h
     f = lambda rows: dated([(d, row(t, o, l, v)) for d, t, o, l, v in rows])
     ftv = lambda rows: dated([(d, tvrow(t, o, l, v)) for d, t, o, l, v in rows])
     return f"""<section aria-labelledby="h-o"><h2 id="h-o">Commentary</h2>{f(op)}</section>
