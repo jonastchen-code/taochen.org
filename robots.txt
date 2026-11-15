@@ -1,0 +1,6 @@
+# All crawlers, including search engines and AI assistants, may index this site.
+# A plain-text overview for language models is at https://taochen.org/llms.txt
+User-agent: *
+Allow: /
+
+Sitemap: https://taochen.org/sitemap.xml
