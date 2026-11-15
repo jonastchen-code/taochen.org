@@ -22,6 +22,7 @@ POSITIONS = [("2025–", "Provost’s Chair Professor in Finance, Nanyang Busine
              ("2020–", "Associate Professor (with tenure) in Finance, NTU"),
              ("2014–2020", "Assistant Professor in Finance, NTU"),
              ("2026–", "Fellow, Asian Bureau of Finance and Economic Research (ABFER)"),
+             ("2024–", "Executive Committee and Fellow, NTU Teaching Excellence Academy (TEA)"),
              ("2020–", "Fellow, NTU Institute of Science and Technology for Humanity (NISTH)")]
 EDUCATION = [("2014", "PhD in Finance, The Chinese University of Hong Kong"),
              ("2011", "MPhil in Finance, The Hong Kong University of Science and Technology"),
