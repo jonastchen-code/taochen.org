@@ -112,10 +112,12 @@ def page(path, title, body, desc, active=None, head_extra="", jsonld=None, page_
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="site">
-<div class="wrap">
-<p class="site-name"><a href="/">{E(NAME)}</a> <span class="site-aff">| NBS | NTU</span></p>
-{nav(active)}
+<div class="wrap masthead">
+<p class="site-name"><a href="/">{E(NAME)}</a></p>
+<p class="site-tag">Sustainable Finance · FinTech · AI and Finance · Investors, Monitors and Corporate Policy</p>
+<p class="site-aff">Nanyang Business School, Nanyang Technological University</p>
 </div>
+<div class="navband"><div class="wrap">{nav(active)}</div></div>
 </header>
 <main id="main" class="wrap">
 {body}
@@ -168,7 +170,7 @@ def home():
     progs = "".join(f'<li><a href="{PAPERS}#{pid}">{E(name)}</a></li>' for pid, name, _ in PROGRAMS)
     body = f"""<div class="intro">
 <img class="portrait" src="/assets/img/tao-chen.jpg" width="180" height="225" alt="Portrait of Tao (Jonas) Chen">
-<h1>{E(NAME)}</h1>
+<h1 class="vh">{E(NAME)}</h1>
 <p class="role">Provost’s Chair Professor in Finance<br>Associate Professor in Finance<br>Nanyang Business School, Nanyang Technological University, Singapore</p>
 {HOME_INTRO}
 <p class="contact"><a href="mailto:jtchen@ntu.edu.sg">jtchen@ntu.edu.sg</a> · ABS-06-106, 91 Nanyang Avenue, Singapore 639956</p>
