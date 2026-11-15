@@ -162,6 +162,8 @@ def home():
     stats = "".join(f'<div class="stat"><dt>{E(l)}</dt><dd>{E(v)}</dd></div>' for v, l in STATS)
     rec = "".join(f'<li><a href="/research/{p["slug"]}/">{E(p["display"])}</a> <span class="meta">— <cite>{E(p["journal"])}</cite>, {p["year"]}</span></li>' for p in recent)
     pos = "".join(f'<li><span class="yr">{E(y)}</span> {E(t)}</li>' for y, t in POSITIONS)
+    fel = "".join(f'<li><span class="yr">{E(y)}</span> {E(t)}</li>' for y, t in FELLOWSHIPS)
+    edi = "".join(f'<li><span class="yr">{E(y)}</span> <span>{t}</span></li>' for y, t in EDITORIAL)
     edu = "".join(f'<li><span class="yr">{E(y)}</span> {E(t)}</li>' for y, t in EDUCATION)
     progs = "".join(f'<li><a href="{PAPERS}#{pid}">{E(name)}</a></li>' for pid, name, _ in PROGRAMS)
     body = f"""<div class="intro">
@@ -179,7 +181,10 @@ def home():
 </section>
 <section aria-labelledby="h-programs">
 <h2 id="h-programs">Research programs</h2>
+<div class="programs-row">
 <ul class="plain">{progs}</ul>
+<a class="cloud-small" href="{PAPERS}">{cloud("research-cloud-small", 640, 331)}</a>
+</div>
 </section>
 <section aria-labelledby="h-recent">
 <h2 id="h-recent">Recent publications</h2>
@@ -189,6 +194,10 @@ def home():
 <div class="two">
 <section aria-labelledby="h-pos"><h2 id="h-pos">Positions</h2><ul class="dated">{pos}</ul></section>
 <section aria-labelledby="h-edu"><h2 id="h-edu">Education</h2><ul class="dated">{edu}</ul></section>
+</div>
+<div class="two">
+<section aria-labelledby="h-fel"><h2 id="h-fel">Fellowships</h2><ul class="dated">{fel}</ul></section>
+<section aria-labelledby="h-edi"><h2 id="h-edi">Editorial</h2><ul class="dated">{edi}</ul></section>
 </div>"""
     person = dict(PERSON, description=HOME_DESC, workLocation={"@type": "Place", "name": "Singapore"},
                   hasOccupation={"@type": "Occupation", "name": "Professor of Finance"})
@@ -198,6 +207,12 @@ def home():
            "isPartOf": {"@id": SITE + "/#website"}, "dateModified": UPDATED_ISO, "mainEntity": {"@id": SITE + "/#person"}},
           person]}
     page("/", NAME, body, HOME_DESC, active="/", jsonld=ld)
+
+CLOUD_ALT = ("Word cloud of research topics in the shape of a world map. The largest words are sustainable finance, "
+             "corporate governance, artificial intelligence, FinTech, ESG, financial analysts and tax avoidance.")
+def cloud(name, w, h):
+    return (f'<picture><source srcset="/assets/img/{name}-dark.png" media="(prefers-color-scheme: dark)">'
+            f'<img src="/assets/img/{name}.png" width="{w}" height="{h}" alt="{E(CLOUD_ALT)}" loading="lazy" decoding="async"></picture>')
 
 # ---------- Papers ----------
 def research():
@@ -213,6 +228,7 @@ def research():
     body = f"""<h1>Research papers</h1>
 <p>{len(PUBS)} published articles, grouped into three research programs and listed newest first within each. Each entry links to a paper page with a summary and citation, and to a freely available PDF where one exists.</p>
 <p class="toc">{toc}</p>
+<figure class="cloud">{cloud("research-cloud", 1600, 827)}</figure>
 <div class="search" hidden>
 <label for="q">Search papers</label>
 <input id="q" type="search" placeholder="Title, co-author, journal, year or topic" autocomplete="off">
