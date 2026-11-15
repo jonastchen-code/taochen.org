@@ -12,7 +12,7 @@ AAM = "Accepted manuscript (DR-NTU repository)"
 SSRN_V = "Working-paper version (SSRN)"
 
 EXTRA = {
- "10.1038/s41558-026-02657-2": dict(pdf=None, pdf_note="The accepted manuscript is in NTU’s DR-NTU repository but is under embargo.",
+ "10.1038/s41558-026-02657-2": dict(pdf=None, pdf_note="The accepted manuscript in NTU’s DR-NTU repository is under embargo until 31 January 2027.",
   one="Most accredited avoided-deforestation carbon projects do not maintain the ecological condition of forests better than comparable unprotected areas.",
   summary="Avoided-deforestation projects generate carbon credits by reducing forest loss, but it is unclear whether they also keep forests ecologically healthy. The paper compiles 196 accredited projects from major voluntary carbon registries and compares project areas with matched control areas in the same biome, excluding a 10-km zone around each project to allow for local leakage. For the 133 projects with good matches, it evaluates five indicators of ecological integrity: biodiversity intactness, forest landscape integrity, fragmentation, canopy height and net greenhouse-gas flux. Most projects show mixed, negligible or negative effects relative to controls, which points to shortcomings that limit these projects’ ability to safeguard ecosystems and sequester carbon."),
  "10.1017/S0022109024000644": dict(pdf="/papers/chen-xiong-zou-2025-jfqa.pdf", pdf_label=PUB_OA,
