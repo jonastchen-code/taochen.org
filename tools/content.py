@@ -16,18 +16,20 @@ HOME_INTRO = """<p>Welcome. I am an associate professor of finance at Nanyang Bu
 STATS = [("5,500+", "Citations"), ("20", "h-index"), ("10", "FT50 publications"), ("6", "UTD 24 publications"),
          ("1", "Nature Index publication"), ("Top 2%", "Stanford/Elsevier scientists")]
 STATS_NOTE = ("Citations and h-index from Google Scholar, October 2026. Journal lists: Financial Times 50, UT Dallas 24, Nature Index. "
-              "Stanford/Elsevier list of the top 2% of scientists, 2025.")
+              "Stanford/Elsevier list of the top 2% of scientists, 2024–2026.")
 
 POSITIONS = [("2025–", "Provost’s Chair Professor in Finance, Nanyang Business School, NTU"),
              ("2020–", "Associate Professor (with tenure) in Finance, NTU"),
              ("2014–2020", "Assistant Professor in Finance, NTU"),
-             ("2016, 2018, 2024", "Visiting Research Fellow, Hong Kong Monetary Authority")]
+             ("2026–", "Fellow, Asian Bureau of Finance and Economic Research (ABFER)"),
+             ("2024–", "Executive Committee and Fellow, NTU Teaching Excellence Academy (TEA)"),
+             ("2020–", "Fellow, NTU Institute of Science and Technology for Humanity (NISTH)")]
 EDUCATION = [("2014", "PhD in Finance, The Chinese University of Hong Kong"),
              ("2011", "MPhil in Finance, The Hong Kong University of Science and Technology"),
              ("2004", "BA in English and Finance, Beijing Foreign Studies University")]
 
 PERSON = {"@type": "Person", "@id": "https://taochen.org/#person", "name": "Tao Chen", "alternateName": ["Tao (Jonas) Chen", "Jonas Chen", "Chen Tao"],
-          "url": "https://taochen.org/", "email": "mailto:jtchen@ntu.edu.sg",
+          "url": "https://taochen.org/", "image": "https://taochen.org/assets/img/tao-chen-720.jpg", "email": "mailto:jtchen@ntu.edu.sg",
           "jobTitle": ["Provost's Chair Professor in Finance", "Associate Professor of Finance"],
           "worksFor": {"@type": "CollegeOrUniversity", "name": "Nanyang Technological University", "department": {"@type": "Organization", "name": "Nanyang Business School"}},
           "alumniOf": [{"@type": "CollegeOrUniversity", "name": "The Chinese University of Hong Kong"},
@@ -38,9 +40,10 @@ PERSON = {"@type": "Person", "@id": "https://taochen.org/#person", "name": "Tao 
           "sameAs": ["https://scholar.google.com/citations?user=NzpHEjkAAAAJ", SSRN, ORCID_URL, NTU_PAGE]}
 
 def TEACHING_HTML(dated):
-    courses = [("2020–", "FF6121 Investments — MSc Finance"),
-               ("2017–", "BF2201 Investments — undergraduate core course"),
-               ("2019–", "BF2100 Ethics in the Investment Profession — undergraduate"),
+    courses = [("2026–", "EM6011 Financial Decision Making I — Global EMBA"),
+               ("2020–", "FF6121 Investments — MSc Finance"),
+               ("2017–2023", "BF2201 Investments — undergraduate core course"),
+               ("2019–2023", "BF2100 Ethics in the Investment Profession — undergraduate"),
                ("2014–2016", "BF2207 International Finance — undergraduate core course")]
     phd = [("2026", "Yaqi Wang (supervisor) — Associate Professor, Dongbei University of Finance and Economics"),
            ("2023", "Chengyuan Qu (supervisor) — China Securities Regulatory Commission"),
@@ -60,7 +63,7 @@ def SERVICE_HTML(dated):
           ("2022–", "Associate Editor, <cite>Financial Management</cite>"),
           ("2023–", "Guest Editor, <cite>Pacific-Basin Finance Journal</cite>")]
     prof = [("2026–", "Fellow, Asian Bureau of Finance and Economic Research (ABFER)"),
-            ("2026–", "Co-Chair, Financial Management Association (FMA) Asia/Pacific Conference"),
+            ("2026", "Co-Chair, Financial Management Association (FMA) Asia/Pacific Conference"),
             ("2023–", "Vice President (Programs), Asian Finance Association"),
             ("2023–", "Co-Chair, Asian Finance Association Annual Conference"),
             ("2021–", "Board Member, Asian Finance Association"),
@@ -78,8 +81,8 @@ def SERVICE_HTML(dated):
 <p>Program committees: European Finance Association Annual Meeting; SFS Cavalcade Asia-Pacific; FMA Asia/Pacific Conference; American Marketing Association Winter Academic Conference.</p></section>
 <section aria-labelledby="h-u"><h2 id="h-u">University</h2>{dated(univ)}</section>
 <section aria-labelledby="h-g"><h2 id="h-g">Grant review and refereeing</h2>
-<p>Grant reviewer for the Swiss National Science Foundation, the Research Grants Council of Hong Kong, and the Hong Kong Monetary Authority / Hong Kong Institute for Monetary Research.</p>
-<p>Referee for journals including <cite>Review of Financial Studies</cite>, <cite>Management Science</cite>, <cite>The Accounting Review</cite>, <cite>Journal of Financial and Quantitative Analysis</cite>, <cite>Review of Finance</cite>, <cite>Contemporary Accounting Research</cite>, <cite>Research Policy</cite>, <cite>Journal of Public Economics</cite>, <cite>Journal of Development Economics</cite> and <cite>Journal of Corporate Finance</cite>.</p></section>"""
+<p>Grant reviewer for the Swiss National Science Foundation, the Research Grants Council of Hong Kong, the Hong Kong Monetary Authority / Hong Kong Institute for Monetary Research, etc.</p>
+<p>Referee for journals including <cite>Review of Financial Studies</cite>, <cite>Management Science</cite>, <cite>The Accounting Review</cite>, <cite>Journal of Financial and Quantitative Analysis</cite>, <cite>Review of Finance</cite>, <cite>Contemporary Accounting Research</cite>, <cite>Research Policy</cite>, <cite>Journal of Public Economics</cite>, <cite>Journal of Development Economics</cite>, <cite>Journal of Corporate Finance</cite>, etc.</p></section>"""
 
 def AWARDS_HTML(dated):
     research = [("2026", "Best Paper Award for Capital Markets, Craigs Investment Partners"),
@@ -103,7 +106,7 @@ def AWARDS_HTML(dated):
                 ("2023", "Teacher of the Year Award, MSc Finance programme, NTU"),
                 ("2022", "Nanyang Education Award (School), NTU"),
                 ("2019", "NBS Teaching Excellence Award, Nanyang Business School")]
-    honours = [("2025", "Stanford/Elsevier list of the top 2% of scientists"),
+    honours = [("2024–2026", "Stanford/Elsevier list of the top 2% of scientists"),
                ("2016, 2018, 2024", "Visiting Research Fellowship, Hong Kong Monetary Authority"),
                ("2014", "CUHK Young Scholars Thesis Award, The Chinese University of Hong Kong")]
     service = [("2021", "Excellence in Reviewing Award, International Accounting Section, American Accounting Association")]
