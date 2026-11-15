@@ -200,6 +200,7 @@ def MEDIA_HTML(dated):
 # (date, html text). Facts taken from the site's own lists (papers, awards, fellowships, keynotes, media).
 NEWS = [("2026", 'New paper in <cite>Nature Climate Change</cite>: <a href="/research/ecological-integrity-avoided-deforestation-ncc-2026/">“Ecological integrity of avoided deforestation projects”</a>'),
         ("2026", 'Became a Fellow of the Asian Bureau of Finance and Economic Research (ABFER)'),
-        ("2026", 'Best Paper Awards for Investments and for Capital Markets at INFINZ, New Zealand <a href="/awards/">(awards)</a>'),
+        ("2026", 'Best Paper Award for Capital Markets, Craigs Investment Partners <a href="/awards/">(awards)</a>'),
+        ("2026", 'Best Paper Award for Investments, Institute of Finance Professionals New Zealand (INFINZ) <a href="/awards/">(awards)</a>'),
         ("Mar 2026", 'On 8world <cite>Frontline</cite>, on fuel costs for businesses and drivers <a href="/media/">(media)</a>'),
         ("Jan 2026", 'Keynote, 10th China Accounting and Finance Conference, Hangzhou: “Sustainable Finance: ESG and ESG Investing” <a href="/talks/">(talks)</a>')]
