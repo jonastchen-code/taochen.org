@@ -26,7 +26,16 @@ a:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(
 .vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
 /* Header and navigation */
-header.site{border-bottom:1px solid var(--rule);padding:1.25rem 0 .75rem}
+header.site{padding:0}
+.masthead{text-align:center;padding:1.75rem 1rem 1.1rem}
+.masthead .site-name{font-size:var(--fs-h1);margin:0 0 .35rem}
+.site-tag,.masthead .site-aff{margin:0;font-size:var(--fs-small);color:var(--muted);letter-spacing:.04em}
+.site-tag{color:var(--ink)}
+.navband{background:#1F3A5F}
+.navband nav ul{justify-content:center;gap:0 1.4rem}
+.navband nav a{color:#E8EEF6;padding:.6rem 0}
+.navband nav a:hover{color:#fff}
+.navband nav a[aria-current="page"]{color:#fff;text-decoration-color:#fff}
 .site-name{margin:0 0 .35rem;font-family:var(--serif);font-size:var(--fs-h2);font-weight:600}
 .site-name a{color:var(--ink);text-decoration:none}
 .site-name,.intro h1{text-transform:uppercase;letter-spacing:.06em} /* name in capitals (Jonas, option B, 15 Nov 2026) */
@@ -106,7 +115,8 @@ footer.site p{margin:0 0 .3rem}
 @media (max-width:640px){
 .portrait{float:none;display:block;width:132px;margin:0 0 1rem}
   :root{--fs-h1:1.375rem}
-  header.site{padding:.85rem 0 .35rem}
+  .masthead{padding:1rem .5rem .75rem}
+  .navband nav ul{gap:0 .9rem}
   .site-name{margin-bottom:.15rem}
   nav ul{gap:0 .9rem}
   nav a{padding:.5rem 0;min-height:2.25rem}

@@ -112,10 +112,12 @@ def page(path, title, body, desc, active=None, head_extra="", jsonld=None, page_
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="site">
-<div class="wrap">
-<p class="site-name"><a href="/">{E(NAME)}</a> <span class="site-aff">| NBS | NTU</span></p>
-{nav(active)}
+<div class="wrap masthead">
+<p class="site-name"><a href="/">{E(NAME)}</a></p>
+<p class="site-tag">Sustainable Finance · FinTech, AI, and Finance · Investors, Monitors and Corporate Policy</p>
+<p class="site-aff">Nanyang Business School, Nanyang Technological University</p>
 </div>
+<div class="navband"><div class="wrap">{nav(active)}</div></div>
 </header>
 <main id="main" class="wrap">
 {body}
