@@ -170,7 +170,7 @@ def home():
     progs = "".join(f'<li><a href="{PAPERS}#{pid}">{E(name)}</a></li>' for pid, name, _ in PROGRAMS)
     body = f"""<div class="intro">
 <img class="portrait" src="/assets/img/tao-chen.jpg" width="180" height="225" alt="Portrait of Tao (Jonas) Chen">
-<h1>{E(NAME)}</h1>
+<h1 class="vh">{E(NAME)}</h1>
 <p class="role">Provost’s Chair Professor in Finance<br>Associate Professor in Finance<br>Nanyang Business School, Nanyang Technological University, Singapore</p>
 {HOME_INTRO}
 <p class="contact"><a href="mailto:jtchen@ntu.edu.sg">jtchen@ntu.edu.sg</a> · ABS-06-106, 91 Nanyang Avenue, Singapore 639956</p>
