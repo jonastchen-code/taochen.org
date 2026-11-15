@@ -112,7 +112,7 @@ site.append(("Home page has WebSite, ProfilePage and Person JSON-LD", {"WebSite"
 site.append(("Paper page titles are unique", not dup, list(dup)))
 internal_bad = []
 for f in glob.glob("**/*.html", recursive=True):
-    for h in re.findall(r'href="(/[^"#]*)', open(f).read()):
+    for h in re.findall(r'href="(/[^"#?]*)', open(f).read()):
         q = h.lstrip("/"); q = os.path.join(q, "index.html") if (q == "" or q.endswith("/")) else q
         if not os.path.exists(q): internal_bad.append((f, h))
 site.append(("No broken internal links", not internal_bad, internal_bad))
