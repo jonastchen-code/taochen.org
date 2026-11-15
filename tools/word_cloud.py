@@ -2,7 +2,7 @@
 Usage: python3 tools/word_cloud.py      (needs: pip install wordcloud numpy pillow)
 Words come from the paper keywords in papers_extra.KEYWORDS. Method-only terms are dropped,
 near-synonyms merged, and the three research programmes weighted up (Jonas's choices, 15 Nov 2026;
-China kept small at his request). Shape: Robinson world-map outline. Re-run after adding papers."""
+China kept small at his request). Shape: Robinson world-map outline, no frame line (Jonas, 15 Nov 2026). Re-run after adding papers."""
 import os, sys, random
 from collections import Counter
 import numpy as np
@@ -60,7 +60,7 @@ def render(freq, W, H, out_w, path, theme, max_font, min_font, max_words, contou
                    margin=6, color_func=col, random_state=3, collocations=False, max_words=max_words,
                    contour_width=0)
     im = wc.generate_from_frequencies(freq).to_image()
-    pts = outline(W, H, pad); ImageDraw.Draw(im).line(pts + pts[:1], fill=line, width=contour, joint="curve")
+    if contour: pts = outline(W, H, pad); ImageDraw.Draw(im).line(pts + pts[:1], fill=line, width=contour, joint="curve")
     im = im.resize((out_w, round(H * out_w / W)), Image.LANCZOS)
     im.quantize(32, method=Image.FASTOCTREE).save(path, optimize=True); print(path, im.size, os.path.getsize(path))
 
@@ -68,5 +68,5 @@ if __name__ == "__main__":
     f = frequencies()
     for t in THEMES:
         sfx = "" if t == "light" else "-dark"
-        render(f, 2400, 1240, 1600, os.path.join(IMG, f"research-cloud{sfx}.png"), t, 200, 14, 200, 3)
-        render(f, 1200, 620, 640, os.path.join(IMG, f"research-cloud-small{sfx}.png"), t, 150, 26, 22, 3)
+        render(f, 2400, 1240, 1600, os.path.join(IMG, f"research-cloud{sfx}.png"), t, 200, 14, 200, 0)
+        render(f, 1200, 620, 640, os.path.join(IMG, f"research-cloud-small{sfx}.png"), t, 150, 26, 22, 0)
