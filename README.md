@@ -18,6 +18,8 @@ Academic homepage of Tao (Jonas) Chen, Nanyang Business School, NTU. Served by G
 sitemap.xml  robots.txt  llms.txt  404.html  CNAME  .nojekyll
 ```
 
+To check metadata on every paper page, run `python3 tools/validate.py`.
+
 The pages are plain static HTML; edit them directly, or regenerate them from the publication data.
 
 ## Updating

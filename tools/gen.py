@@ -2,13 +2,13 @@
 import os, re, sys, json, html
 sys.path.insert(0, os.path.dirname(__file__))
 from data import PROGRAMS, PUBS, FT50, UTD24, NATURE_INDEX
-from papers_extra import EXTRA, DRNTU_ABSTRACTS
+from papers_extra import EXTRA, DRNTU_ABSTRACTS, KEYWORDS
 from content import *  # page content
 
 OUT = sys.argv[1]
 SITE = "https://taochen.org"
-UPDATED_ISO = "2026-11-14"
-UPDATED = "14 November 2026"
+UPDATED_ISO = "2026-11-15"
+UPDATED = "15 November 2026"
 NAME = "Tao (Jonas) Chen"
 E = lambda s: html.escape(str(s), quote=True)
 
@@ -50,6 +50,8 @@ for p in PUBS:
     x = EXTRA[p["doi"]]
     p.update(one=x["one"], summary=x["summary"], pdf=x["pdf"], pdf_label=x.get("pdf_label", ""), pdf_note=x.get("pdf_note", ""))
     p["finding"] = p["one"]
+    p["keywords"] = KEYWORDS[p["doi"]]
+    p["pdf_abs"] = (SITE + p["pdf"]) if (p["pdf"] or "").startswith("/") else p["pdf"]
     if not p["abstract"]: p["abstract"] = DRNTU_ABSTRACTS.get(p["doi"], "")
 PUBS.sort(key=lambda p: (-p["year"], -p["month"]))
 
@@ -75,8 +77,8 @@ def nav(active):
     items = "".join(f'<li><a href="{h}"{" aria-current=\"page\"" if h == active else ""}>{E(t)}</a></li>' for h, t in NAV)
     return f'<nav aria-label="Main"><ul>{items}</ul></nav>'
 
-def page(path, title, body, desc, active=None, head_extra="", jsonld=None, page_title=None):
-    full_title = f"{title} | {NAME}" if title != NAME else f"{NAME} | Nanyang Business School"
+def page(path, title, body, desc, active=None, head_extra="", jsonld=None, page_title=None, og_type="website", full_title=None, index=True):
+    full_title = full_title or (f"{title} | {NAME}" if title != NAME else f"{NAME} | Nanyang Business School")
     url = SITE + path
     ld = f'<script type="application/ld+json">{json.dumps(jsonld, ensure_ascii=False, indent=1)}</script>' if jsonld else ""
     doc = f"""<!doctype html>
@@ -86,11 +88,13 @@ def page(path, title, body, desc, active=None, head_extra="", jsonld=None, page_
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{E(full_title)}</title>
 <meta name="description" content="{E(desc)}">
-<link rel="canonical" href="{url}">
-<meta property="og:type" content="website">
+{f'<link rel="canonical" href="{url}">' if index else '<meta name="robots" content="noindex">'}
+<meta property="og:type" content="{og_type}">
+<meta property="og:site_name" content="{E(NAME)}">
 <meta property="og:title" content="{E(full_title)}">
 <meta property="og:description" content="{E(desc)}">
 <meta property="og:url" content="{url}">
+<meta name="twitter:card" content="summary">
 <meta name="color-scheme" content="light dark">
 <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -113,7 +117,7 @@ def page(path, title, body, desc, active=None, head_extra="", jsonld=None, page_
 <footer class="site">
 <div class="wrap">
 <p><a href="mailto:jtchen@ntu.edu.sg">jtchen@ntu.edu.sg</a> · <a href="{SCHOLAR}">Google Scholar</a> · <a href="{SSRN}">SSRN</a> · <a href="{ORCID_URL}">ORCID</a> · <a href="{NTU_PAGE}">NTU page</a></p>
-<p class="meta">Nanyang Business School, Nanyang Technological University, Singapore. Last updated {UPDATED}.</p>
+<p class="meta">Nanyang Business School, Nanyang Technological University, Singapore. Last updated <time datetime="{UPDATED_ISO}">{UPDATED}</time>.</p>
 </div>
 </footer>
 </body>
@@ -179,8 +183,13 @@ def home():
 <section aria-labelledby="h-pos"><h2 id="h-pos">Positions</h2><ul class="dated">{pos}</ul></section>
 <section aria-labelledby="h-edu"><h2 id="h-edu">Education</h2><ul class="dated">{edu}</ul></section>
 </div>"""
-    ld = {"@context": "https://schema.org", "@type": "ProfilePage", "dateModified": UPDATED_ISO,
-          "mainEntity": PERSON}
+    person = dict(PERSON, description=HOME_DESC, workLocation={"@type": "Place", "name": "Singapore"},
+                  hasOccupation={"@type": "Occupation", "name": "Professor of Finance"})
+    ld = {"@context": "https://schema.org", "@graph": [
+          {"@type": "WebSite", "@id": SITE + "/#website", "url": SITE + "/", "name": NAME, "inLanguage": "en", "publisher": {"@id": SITE + "/#person"}},
+          {"@type": "ProfilePage", "@id": SITE + "/#profile", "url": SITE + "/", "name": f"{NAME} | Nanyang Business School",
+           "isPartOf": {"@id": SITE + "/#website"}, "dateModified": UPDATED_ISO, "mainEntity": {"@id": SITE + "/#person"}},
+          person]}
     page("/", NAME, body, HOME_DESC, active="/", jsonld=ld)
 
 # ---------- Papers ----------
@@ -206,7 +215,8 @@ def research():
 <p class="meta">Citation counts: <a href="{SCHOLAR}">Google Scholar</a>. Working papers: <a href="{SSRN}">SSRN</a>. All entries as BibTeX: <a href="/research/publications.bib">publications.bib</a>.</p>
 <script src="/assets/js/search.js" defer></script>"""
     ld = {"@context": "https://schema.org", "@type": "CollectionPage", "name": "Research papers — " + NAME, "url": SITE + PAPERS,
-          "author": {"@id": SITE + "/#person"},
+          "author": {"@type": "Person", "@id": SITE + "/#person", "name": "Tao Chen", "url": SITE + "/"},
+          "isPartOf": {"@type": "WebSite", "@id": SITE + "/#website", "url": SITE + "/"},
           "hasPart": [{"@type": "ScholarlyArticle", "name": p["title"], "url": f"{SITE}/research/{p['slug']}/", "sameAs": "https://doi.org/" + p["doi"]} for p in PUBS]}
     page(PAPERS, "Research papers", body, f"Published research by {NAME} in sustainable finance; FinTech, AI, and finance; and investors, monitors and corporate policy.", active=PAPERS, jsonld=ld)
     # old address /research/ forwards to the papers page
@@ -229,15 +239,19 @@ def paper_page(p):
     if len(pg) > 1: meta.append(f'<meta name="citation_lastpage" content="{E(pg[1])}">')
     meta.append(f'<meta name="citation_doi" content="{E(p["doi"])}">')
     if p["abstract"]: meta.append(f'<meta name="citation_abstract" content="{E(p["abstract"])}">')
-    if p["pdf"] and p["pdf"].startswith("/"): meta.append(f'<meta name="citation_pdf_url" content="{SITE}{p["pdf"]}">')
+    if p["pdf"]: meta.append(f'<meta name="citation_pdf_url" content="{E(p["pdf_abs"])}">')
+    meta.append(f'<meta name="citation_language" content="en">')
+    meta.append(f'<meta name="citation_keywords" content="{E("; ".join(p["keywords"]))}">')
+    meta.append(f'<meta property="article:published_time" content="{p["year"]}-{p["month"]:02d}">')
     ld = {"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": p["title"][:110], "name": p["title"],
           "author": [{"@type": "Person", "name": a, **({"@id": SITE + "/#person", "url": SITE + "/"} if a == "Tao Chen" else {})} for a in p["authors"]],
           "datePublished": f"{p['year']}-{p['month']:02d}", "sameAs": "https://doi.org/" + p["doi"],
           "identifier": {"@type": "PropertyValue", "propertyID": "DOI", "value": p["doi"]},
           "isPartOf": {"@type": "PublicationVolume", "volumeNumber": p["vol"], "isPartOf": {"@type": "Periodical", "name": p["journal"]}},
-          "pagination": p["pages"], "about": prog, "url": f"{SITE}/research/{p['slug']}/", "description": p["one"]}
-    if p["abstract"]: ld["abstract"] = p["abstract"]
-    if p["pdf"]: ld["encoding"] = {"@type": "MediaObject", "encodingFormat": "application/pdf", "contentUrl": (SITE + p["pdf"]) if p["pdf"].startswith("/") else p["pdf"]}
+          "pagination": p["pages"], "about": prog, "url": f"{SITE}/research/{p['slug']}/", "mainEntityOfPage": f"{SITE}/research/{p['slug']}/",
+          "description": p["one"], "abstract": p["summary"], "keywords": p["keywords"], "inLanguage": "en",
+          "isAccessibleForFree": bool(p["pdf"])}
+    if p["pdf"]: ld["encoding"] = {"@type": "MediaObject", "encodingFormat": "application/pdf", "contentUrl": p["pdf_abs"], "description": p["pdf_label"]}
     ab = f'<details><summary>Abstract as published</summary><p>{E(p["abstract"])}</p></details>' if p["abstract"] else ""
     apa = f'{E(", ".join(p["authors"]))} ({p["year"]}). {E(p["title"])}. <cite>{E(p["journal"])}</cite>, {E(p["vol"])}{f"({E(p["issue"])})" if p["issue"] else ""}, {E(p["pages"])}. <a href="https://doi.org/{p["doi"]}">https://doi.org/{p["doi"]}</a>'
     back = f'<a href="{PAPERS}#{p["prog"]}">{E(prog)}</a>'
@@ -255,11 +269,16 @@ def paper_page(p):
 </section>
 </article>
 <nav class="backnav" aria-label="Back"><p>← More in {back} · <a href="{PAPERS}">All research papers</a></p></nav>"""
-    page(f"/research/{p['slug']}/", p["display"], body, p["one"], active=PAPERS, head_extra="\n".join(meta) + "\n", jsonld=ld)
+    short = {"Journal of Financial and Quantitative Analysis": "JFQA"}.get(p["journal"], p["journal"])
+    page(f"/research/{p['slug']}/", p["display"], body, p["one"], active=PAPERS, head_extra="\n".join(meta) + "\n", jsonld=ld,
+         og_type="article", full_title=f"{p['display']} ({short}, {p['year']}) | {NAME}")
 
 # ---------- Simple pages ----------
 def simple(path, title, body, desc):
-    page(path, title, f"<h1>{E(title)}</h1>\n{body}", desc, active=path)
+    ld = {"@context": "https://schema.org", "@type": "WebPage", "name": f"{title} — {NAME}", "url": SITE + path,
+          "description": desc, "isPartOf": {"@type": "WebSite", "@id": SITE + "/#website", "url": SITE + "/"},
+          "about": {"@type": "Person", "@id": SITE + "/#person", "name": "Tao Chen", "url": SITE + "/"}}
+    page(path, title, f"<h1>{E(title)}</h1>\n{body}", desc, active=path, jsonld=ld)
 
 def dated(rows):
     return '<ul class="dated">' + "".join(f'<li><span class="yr">{E(y)}</span> {t}</li>' for y, t in rows) + "</ul>"
@@ -270,15 +289,15 @@ def build_pages():
     simple("/awards/", "Awards", AWARDS_HTML(dated), f"Research, teaching and service awards received by {NAME}.")
     simple("/talks/", "Keynotes and Seminars", TALKS_HTML(dated), f"Keynote speeches and invited seminars given by {NAME}.")
     simple("/media/", "Media", MEDIA_HTML(dated), f"Media interviews, commentary and press coverage of research by {NAME}.")
-    page("/404.html", "Page not found", '<h1>Page not found</h1><p>The page you asked for does not exist. Try the <a href="/">home page</a> or the <a href="/papers.html">list of research papers</a>.</p>', "Page not found.")
+    page("/404.html", "Page not found", '<h1>Page not found</h1><p>The page you asked for does not exist. Try the <a href="/">home page</a> or the <a href="/papers.html">list of research papers</a>.</p>', "Page not found.", index=False)
 
 # ---------- Machine-readable files ----------
 def extras():
-    urls = ["/", "/papers.html", "/teaching/", "/service/", "/awards/", "/talks/", "/media/"] + [f"/research/{p['slug']}/" for p in PUBS]
+    urls = ["/", "/papers.html", "/teaching/", "/service/", "/awards/", "/talks/", "/media/"] + [f"/research/{p['slug']}/" for p in PUBS] + [p["pdf"] for p in PUBS if (p["pdf"] or "").startswith("/")]
     sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + \
          "".join(f"  <url><loc>{SITE}{u}</loc><lastmod>{UPDATED_ISO}</lastmod></url>\n" for u in urls) + "</urlset>\n"
     open(os.path.join(OUT, "sitemap.xml"), "w").write(sm)
-    open(os.path.join(OUT, "robots.txt"), "w").write(f"User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n")
+    open(os.path.join(OUT, "robots.txt"), "w").write(f"# All crawlers, including search engines and AI assistants, may index this site.\n# A plain-text overview for language models is at {SITE}/llms.txt\nUser-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n")
     lines = [f"# {NAME}", "", f"> {HOME_DESC}", "",
              "Provost's Chair Professor in Finance, Nanyang Business School, Nanyang Technological University (NTU), Singapore. Email: jtchen@ntu.edu.sg.",
              "", "## Pages", ""]
@@ -287,7 +306,16 @@ def extras():
     for pid, name, desc in PROGRAMS:
         lines += ["", f"## Publications — {name}", "", desc, ""]
         for p in [p for p in PUBS if p["prog"] == pid]:
-            lines.append(f"- [{p['title']}]({SITE}/research/{p['slug']}/) — {', '.join(p['authors'])}. {p['journal']} {p['vol']}, {p['year']}. DOI {p['doi']}. In one sentence: {p['one']}" + (f" PDF: {p['pdf'] if p['pdf'].startswith('http') else SITE + p['pdf']}" if p['pdf'] else ""))
+            lines.append(f"### {p['title']}")
+            lines.append("")
+            lines.append(f"- Page: {SITE}/research/{p['slug']}/")
+            lines.append(f"- Authors: {', '.join(p['authors'])}")
+            lines.append(f"- Published: {p['journal']} {p['vol']}" + (f"({p['issue']})" if p['issue'] else "") + f": {p['pages']}, {p['year']}. DOI: https://doi.org/{p['doi']}")
+            lines.append(f"- PDF: {p['pdf_abs'] + ' (' + p['pdf_label'] + ')' if p['pdf'] else 'not yet publicly available'}")
+            lines.append(f"- Keywords: {'; '.join(p['keywords'])}")
+            lines.append(f"- In one sentence: {p['one']}")
+            lines.append(f"- Summary: {p['summary']}")
+            lines.append("")
     open(os.path.join(OUT, "llms.txt"), "w").write("\n".join(lines) + "\n")
     os.makedirs(os.path.join(OUT, "data"), exist_ok=True)
     json.dump([{k: p[k] for k in ("title", "authors", "journal", "year", "vol", "issue", "pages", "doi", "prog", "one", "summary", "pdf", "pdf_label", "abstract", "slug")} for p in PUBS],

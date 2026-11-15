@@ -92,3 +92,31 @@ DRNTU_ABSTRACTS = {
  "10.1016/j.jcorpfin.2014.10.009": "This paper investigates how institutional environment like property rights protection influences the size and composition of corporate boards, and further, how board structure impacts firm performance in China. Using a World Bank survey of 2400 public and private firms across 18 Chinese cities, I find robust evidence that weaker helping hand from the government is associated with a higher number and proportion of outsiders on the board, after controlling for the effects of firm complexity, growth opportunities, CEO characteristics, ownership, and the potential endogeneity concern. Furthermore, the results show that when firms are operating in a weak property rights environment, more outsiders improve corporate performance.",
  "10.1016/j.jcorpfin.2016.12.010": "We examine the impact of financial analysts on the efficiency of firms’ investment decisions. We use the accuracy and dispersion of financial analysts’ earnings forecasts as proxies of analyst expertise and quality in making forecasts. We find that high quality forecast is associated with higher investment if the firm is more likely to under-invest and lower investment if the firm is more likely to over-invest, suggesting that forecast quality increases firm-level investment efficiency. We further show that such effects are stronger for the firms with higher information asymmetry and lower institutional stock ownership. The results are consistent with the notion that higher quality of analyst forecasts increases the information environment and external monitoring, which in turn increases investment efficiency.",
 }
+
+# Keywords for machine-readable metadata, taken from each paper's abstract and setting.
+KEYWORDS = {
+ "10.1038/s41558-026-02657-2": ["avoided deforestation", "carbon credits", "ecological integrity", "biodiversity", "nature-based climate solutions", "voluntary carbon market"],
+ "10.1017/S0022109024000644": ["minimum wages", "state ownership", "corporate environmental policy", "pollution", "China", "labor market policy"],
+ "10.1016/j.worlddev.2022.106106": ["bank deregulation", "bank branching", "corporate environmental performance", "pollution", "China"],
+ "10.1016/j.jfineco.2019.06.007": ["institutional ownership", "corporate social responsibility", "Russell index reconstitution", "shareholder attention", "ESG"],
+ "10.1017/S0022109017000576": ["information asymmetry", "tax avoidance", "tax aggressiveness", "analyst coverage", "broker closures and mergers"],
+ "10.1111/acfi.12773": ["credit rating conservatism", "tax avoidance", "Dodd-Frank Act", "sovereign downgrade", "quasi-natural experiment"],
+ "10.1287/mnsc.2021.4191": ["land finance", "tax avoidance", "tax enforcement", "local government", "China"],
+ "10.1287/mnsc.2021.4121": ["globalization", "import competition", "tax avoidance", "Permanent Normal Trade Relations", "U.S. manufacturing"],
+ "10.1371/journal.pone.0286336": ["institutional cross-blockholding", "investor distraction", "corporate social responsibility", "institutional investors"],
+ "10.1371/journal.pone.0292889": ["labor unions", "unionization elections", "real earnings management", "regression discontinuity"],
+ "10.1016/j.jfineco.2014.10.002": ["financial analysts", "corporate governance", "monitoring", "executive compensation", "earnings management", "acquisitions"],
+ "10.1016/j.jcorpfin.2014.10.009": ["board structure", "outside directors", "property rights", "institutions", "firm performance", "China"],
+ "10.1287/mnsc.2020.3942": ["FinTech credit", "small business lending", "firm volatility", "Alibaba", "regression discontinuity", "China"],
+ "10.1016/j.econlet.2024.111857": ["Buy Now, Pay Later", "consumer credit", "interest rates", "responsible lending", "New Zealand"],
+ "10.1080/00913367.2026.2652377": ["AI-enabled advertising", "artificial intelligence", "cultural lag", "persuasion knowledge model", "consumer literacy"],
+ "10.1080/00913367.2022.2149641": ["virtual influencers", "influencer advertising", "uncanny valley", "uses and gratifications", "artificial intelligence"],
+ "10.1016/j.jbankfin.2016.06.012": ["financial innovation", "bank fragility", "bank growth", "economic growth", "financial crisis"],
+ "10.1080/07421222.2021.1962590": ["product market competition", "innovation", "patents", "IT industry", "import tariffs"],
+ "10.1016/j.jcorpfin.2016.12.010": ["financial analysts", "forecast quality", "investment efficiency", "information asymmetry", "monitoring"],
+ "10.1002/smj.2622": ["corporate political activity", "government officials", "event study", "stock market reaction", "China"],
+ "10.1016/j.jbankfin.2019.03.011": ["risk-based capital", "insurers", "risk-taking", "capital regulation", "systemic risk"],
+ "10.1016/j.jempfin.2021.02.002": ["tariff uncertainty", "innovation", "patents", "Permanent Normal Trade Relations", "U.S.-China trade"],
+ "10.1093/rof/rfad007": ["dual ownership", "executive compensation", "risk-taking incentives", "inside debt", "institutional investors"],
+ "10.1111/jori.12437": ["analyst coverage", "risk-taking", "executive compensation", "property-casualty insurance", "monitoring"],
+}
