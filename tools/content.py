@@ -151,35 +151,45 @@ def MEDIA_HTML(dated):
     NTU = "https://personal.ntu.edu.sg/jtchen/"
     op = [("12 Dec 2023", "“The Social Cost of Investor Distraction: Evidence from Institutional Cross-Blockholding”", "Harvard Law School Forum on Corporate Governance", "https://corpgov.law.harvard.edu/2023/12/12/the-social-cost-of-investor-distraction-evidence-from-institutional-cross-blockholding/", ""),
           ("26 Dec 2021", "“Commentary: Binance’s exchange closure in Singapore could usher in more regulations on cryptocurrencies”", "CNA", "https://www.channelnewsasia.com/commentary/binance-withdraws-application-singapore-cryptocurrency-cryptocurrencies-mas-monetary-authority-singapore-2399571", "")]
-    tv = [("27 Mar 2026", "“Fuel costs rise 3,000 a month hit businesses”", "8world, Frontline", "https://www.8world.com/in-depth/frontline/fuel-costs-rise-3000-a-month-hit-businesses-3098591", "https://youtu.be/vVB1ZWZte3Y"),
-          ("27 Mar 2026", "“How man saves thousand a year on fuel”", "8world, Frontline", "https://www.8world.com/in-depth/frontline/how-man-saves-thousand-a-year-on-fuel-3098581", "https://youtu.be/zqSTdNNub9M"),
-          ("27 Mar 2026", "“Diesel overtakes petrol price”", "8world, Frontline", "https://www.8world.com/in-depth/frontline/diesel-overtakes-petrol-price-3098571", "https://youtu.be/kevciVcR4sQ"),
-          ("4 May 2023", "US Federal Reserve interest rate rise", "Channel 8, Hello Singapore", "https://www.8world.com/stories/hello-singapore/us-fed-interest-hike-2023-2123766", ""),
-          ("26 May 2022", "Inflation", "Channel 8, Hello Singapore", "https://www.8world.com/stories/hello-singapore/straight-talk-inflation-1818176", ""),
-          ("28 Apr 2022", "Economic outlook", "Channel 8, Hello Singapore", "", "https://www.youtube.com/watch?v=cnA43TXGVIo&t=122s"),
-          ("28 Apr 2022", "First-quarter labour market advance release", "Channel 8", "", "https://www.youtube.com/watch?v=Ljwg4ugyMZQ")]
+    # TV: (date, title, outlet, article, YouTube id). Dates are air dates from 8world's YouTube descriptions.
+    tv = [("27 Mar 2026", "“Fuel costs rise $3,000 a month for businesses”", "8world, Frontline", "https://www.8world.com/in-depth/frontline/fuel-costs-rise-3000-a-month-hit-businesses-3098591", "vVB1ZWZte3Y"),
+          ("27 Mar 2026", "“How one driver saves a thousand dollars a year on fuel”", "8world, Frontline", "https://www.8world.com/in-depth/frontline/how-man-saves-thousand-a-year-on-fuel-3098581", "zqSTdNNub9M"),
+          ("27 Mar 2026", "“Diesel overtakes petrol in price”", "8world, Frontline", "https://www.8world.com/in-depth/frontline/diesel-overtakes-petrol-price-3098571", "kevciVcR4sQ"),
+          ("5 May 2023", "“US Fed interest rate hike”", "Channel 8, Hello Singapore", "", "eTQQfWdM-GU"),
+          ("25 May 2022", "“Inflation”", "Channel 8, Hello Singapore", "", "wFQHH671PqQ"),
+          ("28 Apr 2022", "“Economic outlook”", "Channel 8, Hello Singapore", "", "cnA43TXGVIo@122"),
+          ("28 Apr 2022", "“Q1 labour market advance release”", "Channel 8 News", "", "Ljwg4ugyMZQ")]
     quoted = [("30 Jul 2023", "On investment advice from financial influencers", "Lianhe Zaobao", "https://www.zaobao.com.sg/finance/singapore/story20230730-1418143", ""),
               ("15 Jun 2023", "“Can the Asean Taxonomy help achieve the region's sustainability ambitions?”", "Eco-Business", "https://www.eco-business.com/news/can-the-asean-taxonomy-help-achieve-the-regions-sustainability-ambitions/", ""),
               ("25 Jan 2023", "On the Global Financial Centres Index, Singapore and Hong Kong", "Lianhe Zaobao", NTU + "Lianhe_Zaobao_Prof%20Chen%20on%20HK-SG.pdf", ""),
               ("21 Jul 2022", "“Why borrowing money to fund insurance policies can prove detrimental”", "The Straits Times", NTU + "Funding%20insurance%20policies%20with%20loans%20could%20prove%20detrimental_ST%2022%20Jul.pdf", ""),
-              ("18 Apr 2022", "“Asean logistics sector could get tech boost as Alibaba unit looks to region for growth”", "The Business Times", "https://www.businesstimes.com.sg/asean-business/asean-logistics-sector-could-get-tech-boost-as-alibaba-unit-looks-to-region-for", ""),
+              ("18 Apr 2022", "“Asean logistics sector could get tech boost as Alibaba unit looks to region for growth”", "The Business Times", "https://www.businesstimes.com.sg/international/asean/asean-logistics-sector-could-get-tech-boost-alibaba-unit-looks-region-growth", ""),
               ("13 Mar 2022", "“As inflation rises, how much more are you paying for your groceries?”", "CNA", "https://www.channelnewsasia.com/singapore/groceries-cost-prices-supermarkets-inflation-eggs-2551636", ""),
               ("3 Mar 2022", "“Higher prices for petrol, electricity and food: How Russia's invasion of Ukraine might affect people in Singapore”", "CNA", "https://www.channelnewsasia.com/singapore/ukraine-invasion-russia-higher-prices-petrol-food-electricity-singapore-2532281", ""),
               ("20 Jan 2022", "“Crypto curbs: Industry players say ad ban not the only way to protect retail investors in Singapore”", "CNA", "https://www.channelnewsasia.com/singapore/mas-no-cryptocurrency-advertisement-marketing-protect-retail-investors-2447321", ""),
               ("25 May 2016", "On the BSI closure and Singapore as a financial centre", "Lianhe Zaobao", NTU + "LHZB_162505_2_Singapores%20position%20as%20a%20financial%20hub%20can%20be%20strengthened%20by%20shutting%20down%20BSI%20Bank.pdf", "")]
     research = [("Sep 2019", "“Institutional investors drive (and seek) firm CSR”", "Network for Business Sustainability", "https://www.nbs.net/articles/report-from-the-research-frontier-september-2019", ""),
                 ("17 Mar 2013", "“Innovation gone bad requires regulation”", "Financial Times", "https://www.ft.com/content/5ad61394-8ca2-11e2-8ee0-00144feabdc0", ""),
-                ("22 Jan 2013", "“Financial innovation: The bright and the dark sides”", "All About Finance, World Bank", "https://blogs.worldbank.org/allaboutfinance/financial-innovation-the-bright-and-the-dark-sides", ""),
-                ("2 Oct 2012", "“Financial innovation: The bright and the dark sides”", "VoxEU", "https://voxeu.org/article/financial-innovation-good-and-bad", "")]
+                ("22 Jan 2013", "“Financial innovation: The bright and the dark sides”", "All About Finance, World Bank", "https://blogs.worldbank.org/en/allaboutfinance/financial-innovation-the-bright-and-the-dark-sides", ""),
+                ("2 Oct 2012", "“Financial innovation: The bright and the dark sides”", "VoxEU", "https://cepr.org/voxeu/columns/financial-innovation-bright-and-dark-sides", "")]
     def row(t, o, link, video):
         h = f'<a href="{E(link)}">{E(t)}</a>' if link else (f'<a href="{E(video)}">{E(t)}</a>' if video else E(t))
         h += f", <cite>{E(o)}</cite>"
         if link.endswith(".pdf"): h += " (PDF)"
         if video: h += f' · <a href="{E(video)}" class="video">Watch video</a>' if link else " (video)"
         return h
+    def tvrow(t, o, link, vid):
+        vid, _, start = vid.partition("@")
+        url = f"https://www.youtube.com/watch?v={vid}" + (f"&t={start}s" if start else "")
+        h = (f'<span class="vid"><a class="thumb" href="{url}" aria-hidden="true" tabindex="-1">'
+             f'<img src="https://i.ytimg.com/vi/{vid}/mqdefault.jpg" width="128" height="72" loading="lazy" alt=""></a>'
+             f'<span><a href="{url}">{E(t)}</a>, <cite>{E(o)}</cite>')
+        if link: h += f' · <a href="{E(link)}">Article</a>'
+        return h + "</span></span>"
     f = lambda rows: dated([(d, row(t, o, l, v)) for d, t, o, l, v in rows])
+    ftv = lambda rows: dated([(d, tvrow(t, o, l, v)) for d, t, o, l, v in rows])
     return f"""<section aria-labelledby="h-o"><h2 id="h-o">Commentary</h2>{f(op)}</section>
-<section aria-labelledby="h-tv"><h2 id="h-tv">Television interviews</h2>{f(tv)}</section>
+<section aria-labelledby="h-tv"><h2 id="h-tv">Television interviews</h2>{ftv(tv)}</section>
 <section aria-labelledby="h-q"><h2 id="h-q">Quoted in the news</h2>{f(quoted)}</section>
 <section aria-labelledby="h-rc"><h2 id="h-rc">Coverage of research</h2>{f(research)}</section>"""
 
