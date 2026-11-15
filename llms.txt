@@ -90,7 +90,7 @@ How environmental, social and governance forces shape firm behaviour: pollution 
 - Page: https://taochen.org/research/globalization-us-corporate-tax-ms-2022/
 - Authors: Tao Chen, Chen Lin, Xiang Shao
 - Published: Management Science 68(8): 6145–6162, 2022. DOI: https://doi.org/10.1287/mnsc.2021.4121
-- PDF: https://papers.ssrn.com/sol3/Delivery.cfm?abstractid=3135205 (Working-paper version, SSRN)
+- PDF: https://taochen.org/papers/chen-lin-shao-2022-ms.pdf (Accepted manuscript, November 2020)
 - Keywords: globalization; import competition; tax avoidance; Permanent Normal Trade Relations; U.S. manufacturing
 - In one sentence: U.S. manufacturers facing more competition from Chinese imports increase their tax-reduction activities.
 - Summary: The paper studies how globalisation affects the tax policies of U.S. manufacturing firms, using the U.S. grant of Permanent Normal Trade Relations to China as a quasi-natural experiment. Firms with greater exposure to Chinese imports significantly increase tax-reduction activities, especially firms with more managerial slack, less diversified product markets and faster-changing industries. Exposed firms are also more likely to acquire subsidiaries in low-tax regions and to show signs of transfer pricing. Tax-reduction activity falls after the 2017 U.S. tax cut and after tariffs on Chinese imports rise.
@@ -220,7 +220,7 @@ How analysts, owners, regulators and governments shape corporate investment, ris
 - Page: https://taochen.org/research/analyst-coverage-executive-compensation-jri-2023/
 - Authors: Tao Chen, Shinichi Kamiya, Pingyi Lou, Andreas Milidonis
 - Published: Journal of Risk and Insurance 90(4): 899–939, 2023. DOI: https://doi.org/10.1111/jori.12437
-- PDF: https://papers.ssrn.com/sol3/Delivery.cfm?abstractid=3778633 (Working-paper version, SSRN, titled “Analyst Coverage and Corporate Risk-Taking”)
+- PDF: https://taochen.org/papers/chen-kamiya-lou-milidonis-2023-jri.pdf (Accepted manuscript, February 2023)
 - Keywords: analyst coverage; risk-taking; executive compensation; property-casualty insurance; monitoring
 - In one sentence: When property–casualty insurers lose analyst coverage, they take more risk, especially where managers’ pay rewards risk-taking.
 - Summary: Using exogenous drops in analyst coverage caused by broker closures and mergers, the paper tests the causal effect of analyst coverage on risk-taking in an opaque industry, property–casualty insurance. After losing coverage, insurers’ risk increases on several book-based and market-based measures, including tail and default risk. The results are driven by firms whose managers have stronger risk-taking incentives in their compensation, and they are stronger for more opaque firms and firms with weaker policyholder monitoring. Risk rises through at least one risk-taking action, such as investing in higher-risk bonds.
@@ -240,7 +240,7 @@ How analysts, owners, regulators and governments shape corporate investment, ris
 - Page: https://taochen.org/research/tariff-uncertainty-firm-innovation-jef-2021/
 - Authors: Tao Chen, Huasheng Gao, Yuxi Wang
 - Published: Journal of Empirical Finance 62: 12–27, 2021. DOI: https://doi.org/10.1016/j.jempfin.2021.02.002
-- PDF: https://papers.ssrn.com/sol3/Delivery.cfm?abstractid=3396232 (Working-paper version, SSRN, titled “Effects of Chinese Imports on U.S. Firm Innovation”)
+- PDF: https://taochen.org/papers/chen-gao-wang-2021-jef.pdf (Accepted manuscript, November 2020)
 - Keywords: tariff uncertainty; innovation; patents; Permanent Normal Trade Relations; U.S.-China trade
 - In one sentence: Lower uncertainty about future tariffs on Chinese imports led affected U.S. firms to innovate more.
 - Summary: The paper examines how tariff uncertainty on Chinese imports affects U.S. firm innovation. It uses the U.S. grant of Permanent Normal Trade Relations (PNTR) to China, which reduced uncertainty about future tariff increases on Chinese goods. U.S. firms affected by PNTR significantly increase their patents and patent citations relative to other firms. The effect is stronger for firms with more irreversible investment and for firms that saw a larger rise in Chinese imports after PNTR. The evidence is consistent with lower tariff uncertainty making long-term, irreversible investment such as innovation more attractive.

@@ -149,8 +149,8 @@
   "prog": "investors-monitors",
   "one": "When property–casualty insurers lose analyst coverage, they take more risk, especially where managers’ pay rewards risk-taking.",
   "summary": "Using exogenous drops in analyst coverage caused by broker closures and mergers, the paper tests the causal effect of analyst coverage on risk-taking in an opaque industry, property–casualty insurance. After losing coverage, insurers’ risk increases on several book-based and market-based measures, including tail and default risk. The results are driven by firms whose managers have stronger risk-taking incentives in their compensation, and they are stronger for more opaque firms and firms with weaker policyholder monitoring. Risk rises through at least one risk-taking action, such as investing in higher-risk bonds.",
-  "pdf": "https://papers.ssrn.com/sol3/Delivery.cfm?abstractid=3778633",
-  "pdf_label": "Working-paper version, SSRN, titled “Analyst Coverage and Corporate Risk-Taking”",
+  "pdf": "/papers/chen-kamiya-lou-milidonis-2023-jri.pdf",
+  "pdf_label": "Accepted manuscript, February 2023",
   "abstract": "Using an exogenous drop in analyst coverage introduced by broker closures and mergers, we test for the causal impact of analyst coverage on corporate risk‐taking, in an opaque industry. We document an increase in risk using several book‐based and market‐based risk measures, including tail and default risk measures. Results are driven by firms with stronger managerial risk‐taking compensation incentives. The increase in risk is stronger in more opaque firms, and firms with weaker policyholder monitoring. Firm risk increases through at least one risk‐taking action, such as investing firm assets in higher‐risk bonds. Our study highlights the importance of stock analysts in affecting corporate risk‐taking, especially in the presence of stronger managerial, compensation risk‐taking incentives.",
   "slug": "analyst-coverage-executive-compensation-jri-2023"
  },
@@ -260,8 +260,8 @@
   "prog": "sustainable-finance",
   "one": "U.S. manufacturers facing more competition from Chinese imports increase their tax-reduction activities.",
   "summary": "The paper studies how globalisation affects the tax policies of U.S. manufacturing firms, using the U.S. grant of Permanent Normal Trade Relations to China as a quasi-natural experiment. Firms with greater exposure to Chinese imports significantly increase tax-reduction activities, especially firms with more managerial slack, less diversified product markets and faster-changing industries. Exposed firms are also more likely to acquire subsidiaries in low-tax regions and to show signs of transfer pricing. Tax-reduction activity falls after the 2017 U.S. tax cut and after tariffs on Chinese imports rise.",
-  "pdf": "https://papers.ssrn.com/sol3/Delivery.cfm?abstractid=3135205",
-  "pdf_label": "Working-paper version, SSRN",
+  "pdf": "/papers/chen-lin-shao-2022-ms.pdf",
+  "pdf_label": "Accepted manuscript, November 2020",
   "abstract": "This paper studies how globalization affects the corporate tax policies of U.S. manufacturing firms. Using U.S.-granting China Permanent Normal Trade Relations as a quasi-natural experiment, we find a significant increase in tax reduction activities for firms facing higher exposure to Chinese imports. The effect is more pronounced for firms with higher managerial slack. We also find that the effect is stronger for firms in less diversified products market and faster changing industries. We also show that U.S. firms facing higher Chinese import competition are more likely to engage in other tax-motivated activities: acquisition of subsidiaries in low-tax regions and suspected transfer pricing. Furthermore, we explore the 2017 tax cut and the recent U.S.-China trade dispute and find that firms engage less in tax reduction activities after the 2017 tax cut and after the tariff increase for Chinese imports.",
   "slug": "globalization-us-corporate-tax-ms-2022"
  },
@@ -347,8 +347,8 @@
   "prog": "investors-monitors",
   "one": "Lower uncertainty about future tariffs on Chinese imports led affected U.S. firms to innovate more.",
   "summary": "The paper examines how tariff uncertainty on Chinese imports affects U.S. firm innovation. It uses the U.S. grant of Permanent Normal Trade Relations (PNTR) to China, which reduced uncertainty about future tariff increases on Chinese goods. U.S. firms affected by PNTR significantly increase their patents and patent citations relative to other firms. The effect is stronger for firms with more irreversible investment and for firms that saw a larger rise in Chinese imports after PNTR. The evidence is consistent with lower tariff uncertainty making long-term, irreversible investment such as innovation more attractive.",
-  "pdf": "https://papers.ssrn.com/sol3/Delivery.cfm?abstractid=3396232",
-  "pdf_label": "Working-paper version, SSRN, titled “Effects of Chinese Imports on U.S. Firm Innovation”",
+  "pdf": "/papers/chen-gao-wang-2021-jef.pdf",
+  "pdf_label": "Accepted manuscript, November 2020",
   "abstract": "We examine the effect of the tariff uncertainty associated with Chinese imports on U.S. firm innovation. Our test exploits the U.S. conferral of Permanent Normal Trade Relations (PNTR) on China—a policy that reduces the uncertainty of future tariff increases for Chinese goods. We find a significant increase in the number of patents and patent citations for U.S. firms affected by PNTR relative to other firms. This result is stronger for firms with more irreversible investments and for firms that experience a greater increase in Chinese goods following PNTR. Overall, our evidence is consistent with the view that lowering the tariff uncertainty of Chinese imports boosts the attractiveness for U.S. firms to make long-term irreversible investment (such as technological innovation) and thus induces U.S. firms to innovate more.",
   "slug": "tariff-uncertainty-firm-innovation-jef-2021"
  },
