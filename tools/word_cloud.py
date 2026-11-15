@@ -23,8 +23,8 @@ MERGE = {'analyst coverage':'financial analysts','forecast quality':'financial a
  'risk-taking incentives':'risk-taking','labor unions':'labor','unionization elections':'labor','minimum wages':'labor','labor market policy':'labor',
  'carbon credits':'carbon markets','voluntary carbon market':'carbon markets','china':'China','board structure':'corporate governance',
  'outside directors':'corporate governance'}
-BOOST = {'sustainable finance':7,'FinTech':3,'artificial intelligence':2,'corporate governance':3,'ESG':3,'corporate finance':2}
-FIXED = {'China':1}
+BOOST = {'sustainable finance':7,'FinTech':3,'artificial intelligence':4,'corporate governance':3,'ESG':3,'corporate finance':2}
+FIXED = {'China':1, 'tax avoidance':2}  # Jonas: China small; AI larger, tax avoidance smaller (15 Nov 2026)
 
 def frequencies():
     c = Counter()
