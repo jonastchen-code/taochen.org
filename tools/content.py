@@ -20,7 +20,9 @@ STATS_NOTE = ("Citations and h-index from Google Scholar, October 2026. Journal 
 
 POSITIONS = [("2025–", "Provost’s Chair Professor in Finance, Nanyang Business School, NTU"),
              ("2020–", "Associate Professor (with tenure) in Finance, NTU"),
-             ("2014–2020", "Assistant Professor in Finance, NTU")]
+             ("2014–2020", "Assistant Professor in Finance, NTU"),
+             ("2026–", "Fellow, Asian Bureau of Finance and Economic Research (ABFER)"),
+             ("2020–", "Fellow, NTU Institute of Science and Technology for Humanity (NISTH)")]
 EDUCATION = [("2014", "PhD in Finance, The Chinese University of Hong Kong"),
              ("2011", "MPhil in Finance, The Hong Kong University of Science and Technology"),
              ("2004", "BA in English and Finance, Beijing Foreign Studies University")]
@@ -78,8 +80,8 @@ def SERVICE_HTML(dated):
 <p>Program committees: European Finance Association Annual Meeting; SFS Cavalcade Asia-Pacific; FMA Asia/Pacific Conference; American Marketing Association Winter Academic Conference.</p></section>
 <section aria-labelledby="h-u"><h2 id="h-u">University</h2>{dated(univ)}</section>
 <section aria-labelledby="h-g"><h2 id="h-g">Grant review and refereeing</h2>
-<p>Grant reviewer for the Swiss National Science Foundation, the Research Grants Council of Hong Kong, and the Hong Kong Monetary Authority / Hong Kong Institute for Monetary Research.</p>
-<p>Referee for journals including <cite>Review of Financial Studies</cite>, <cite>Management Science</cite>, <cite>The Accounting Review</cite>, <cite>Journal of Financial and Quantitative Analysis</cite>, <cite>Review of Finance</cite>, <cite>Contemporary Accounting Research</cite>, <cite>Research Policy</cite>, <cite>Journal of Public Economics</cite>, <cite>Journal of Development Economics</cite> and <cite>Journal of Corporate Finance</cite>.</p></section>"""
+<p>Grant reviewer for the Swiss National Science Foundation, the Research Grants Council of Hong Kong, the Hong Kong Monetary Authority / Hong Kong Institute for Monetary Research, etc.</p>
+<p>Referee for journals including <cite>Review of Financial Studies</cite>, <cite>Management Science</cite>, <cite>The Accounting Review</cite>, <cite>Journal of Financial and Quantitative Analysis</cite>, <cite>Review of Finance</cite>, <cite>Contemporary Accounting Research</cite>, <cite>Research Policy</cite>, <cite>Journal of Public Economics</cite>, <cite>Journal of Development Economics</cite>, <cite>Journal of Corporate Finance</cite>, etc.</p></section>"""
 
 def AWARDS_HTML(dated):
     research = [("2026", "Best Paper Award for Capital Markets, Craigs Investment Partners"),
