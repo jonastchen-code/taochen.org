@@ -37,7 +37,7 @@ PERSON = {"@type": "Person", "@id": "https://taochen.org/#person", "name": "Tao 
           "sameAs": ["https://scholar.google.com/citations?user=NzpHEjkAAAAJ", SSRN, ORCID_URL, NTU_PAGE]}
 
 def TEACHING_HTML(dated):
-    courses = [("2026–", "EM6011 Financial Decision Making I — Global EMBA (Chinese)"),
+    courses = [("2026–", "EM6011 Financial Decision Making I — Global EMBA"),
                ("2020–", "FF6121 Investments — MSc Finance"),
                ("2017–2023", "BF2201 Investments — undergraduate core course"),
                ("2019–2023", "BF2100 Ethics in the Investment Profession — undergraduate"),
