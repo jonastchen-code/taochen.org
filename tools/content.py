@@ -11,8 +11,7 @@ NTU_PAGE = "https://personal.ntu.edu.sg/jtchen/"
 HOME_DESC = ("Tao (Jonas) Chen is Provost's Chair Professor in Finance and Associate Professor of Finance at Nanyang Business School, NTU Singapore. "
              "His research covers sustainable finance; FinTech, AI, and finance; and how investors and monitors shape corporate policy.")
 
-HOME_INTRO = """<p>Welcome. I am an associate professor of finance at Nanyang Business School. My research is in sustainable finance; FinTech, AI, and finance; and how investors and monitors shape corporate policy.</p>
-<p>I teach investments to MSc and undergraduate students and serve as Academic Director of the MSc Finance programme.</p>"""
+HOME_INTRO = """<p>Welcome. I am an associate professor of finance at Nanyang Business School. My research is in sustainable finance; FinTech, AI, and finance; and how investors and monitors shape corporate policy.</p>"""
 
 STATS = [("5,500+", "Citations"), ("20", "h-index"), ("10", "FT50 publications"), ("6", "UTD 24 publications"),
          ("1", "Nature Index publication"), ("Top 2%", "Stanford/Elsevier scientists")]
