@@ -96,6 +96,10 @@ def page(path, title, body, desc, active=None, head_extra="", jsonld=None, page_
 <meta property="og:title" content="{E(full_title)}">
 <meta property="og:description" content="{E(desc)}">
 <meta property="og:url" content="{url}">
+<meta property="og:image" content="{SITE}/assets/img/tao-chen-720.jpg">
+<meta property="og:image:width" content="720">
+<meta property="og:image:height" content="900">
+<meta property="og:image:alt" content="Portrait of Tao (Jonas) Chen">
 <meta name="twitter:card" content="summary">
 <meta name="color-scheme" content="light dark">
 <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
@@ -161,6 +165,7 @@ def home():
     edu = "".join(f'<li><span class="yr">{E(y)}</span> {E(t)}</li>' for y, t in EDUCATION)
     progs = "".join(f'<li><a href="{PAPERS}#{pid}">{E(name)}</a></li>' for pid, name, _ in PROGRAMS)
     body = f"""<div class="intro">
+<img class="portrait" src="/assets/img/tao-chen.jpg" width="180" height="225" alt="Portrait of Tao (Jonas) Chen">
 <h1>{E(NAME)}</h1>
 <p class="role">Provost’s Chair Professor in Finance<br>Associate Professor of Finance<br>Nanyang Business School, Nanyang Technological University, Singapore</p>
 {HOME_INTRO}

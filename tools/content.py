@@ -29,7 +29,7 @@ EDUCATION = [("2014", "PhD in Finance, The Chinese University of Hong Kong"),
              ("2004", "BA in English and Finance, Beijing Foreign Studies University")]
 
 PERSON = {"@type": "Person", "@id": "https://taochen.org/#person", "name": "Tao Chen", "alternateName": ["Tao (Jonas) Chen", "Jonas Chen", "Chen Tao"],
-          "url": "https://taochen.org/", "email": "mailto:jtchen@ntu.edu.sg",
+          "url": "https://taochen.org/", "image": "https://taochen.org/assets/img/tao-chen-720.jpg", "email": "mailto:jtchen@ntu.edu.sg",
           "jobTitle": ["Provost's Chair Professor in Finance", "Associate Professor of Finance"],
           "worksFor": {"@type": "CollegeOrUniversity", "name": "Nanyang Technological University", "department": {"@type": "Organization", "name": "Nanyang Business School"}},
           "alumniOf": [{"@type": "CollegeOrUniversity", "name": "The Chinese University of Hong Kong"},
