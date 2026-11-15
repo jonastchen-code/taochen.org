@@ -106,7 +106,7 @@ def page(path, title, body, desc, active=None, head_extra="", jsonld=None, page_
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;1,400&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap">
-<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="stylesheet" href="{CSS_URL}">
 {head_extra}{ld}
 </head>
 <body>
@@ -208,6 +208,8 @@ def home():
 
 CLOUD_ALT = ("Word cloud of research topics in the shape of a world map. The largest words are sustainable finance, "
              "corporate governance, artificial intelligence, FinTech, ESG, financial analysts and tax avoidance.")
+import hashlib as _h
+CSS_URL = "/assets/css/style.css?v=" + _h.md5(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "assets", "css", "style.css"), "rb").read()).hexdigest()[:8]  # cache-busting
 def img_v(fname):  # content hash, so browsers fetch a redrawn image instead of a cached copy
     import hashlib
     with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "assets", "img", fname), "rb") as f:
