@@ -107,6 +107,9 @@ def AWARDS_HTML(dated):
                 ("2022", "Nanyang Education Award (School), NTU"),
                 ("2019", "NBS Teaching Excellence Award, Nanyang Business School")]
     honours = [("2024–2026", "Stanford/Elsevier list of the top 2% of scientists"),
+               ("2026–", "Fellow, Asian Bureau of Finance and Economic Research (ABFER)"),
+               ("2024–", "Executive Committee and Fellow, NTU Teaching Excellence Academy (TEA)"),
+               ("2020–", "Fellow, NTU Institute of Science and Technology for Humanity (NISTH)"),
                ("2016, 2018, 2024", "Visiting Research Fellowship, Hong Kong Monetary Authority"),
                ("2014", "CUHK Young Scholars Thesis Award, The Chinese University of Hong Kong")]
     service = [("2021", "Excellence in Reviewing Award, International Accounting Section, American Accounting Association")]
