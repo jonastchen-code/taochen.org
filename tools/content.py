@@ -20,8 +20,7 @@ STATS_NOTE = ("Citations and h-index from Google Scholar, October 2026. Journal 
 
 POSITIONS = [("2025–", "Provost’s Chair Professor in Finance, Nanyang Business School, NTU"),
              ("2020–", "Associate Professor (with tenure) in Finance, NTU"),
-             ("2014–2020", "Assistant Professor in Finance, NTU"),
-             ("2016, 2018, 2024", "Visiting Research Fellow, Hong Kong Monetary Authority")]
+             ("2014–2020", "Assistant Professor in Finance, NTU")]
 EDUCATION = [("2014", "PhD in Finance, The Chinese University of Hong Kong"),
              ("2011", "MPhil in Finance, The Hong Kong University of Science and Technology"),
              ("2004", "BA in English and Finance, Beijing Foreign Studies University")]
