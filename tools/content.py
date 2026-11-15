@@ -60,7 +60,7 @@ def SERVICE_HTML(dated):
           ("2022–", "Associate Editor, <cite>Financial Management</cite>"),
           ("2023–", "Guest Editor, <cite>Pacific-Basin Finance Journal</cite>")]
     prof = [("2026–", "Fellow, Asian Bureau of Finance and Economic Research (ABFER)"),
-            ("2026–", "Co-Chair, Financial Management Association (FMA) Asia/Pacific Conference"),
+            ("2026", "Co-Chair, Financial Management Association (FMA) Asia/Pacific Conference"),
             ("2023–", "Vice President (Programs), Asian Finance Association"),
             ("2023–", "Co-Chair, Asian Finance Association Annual Conference"),
             ("2021–", "Board Member, Asian Finance Association"),
