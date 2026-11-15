@@ -60,7 +60,7 @@ ul.plain,ul.recent,ul.dated,ol.papers{list-style:none;margin:0;padding:0}
 ul.recent li,ul.plain li{margin-bottom:.5rem}
 ul.dated li{display:grid;grid-template-columns:8.5rem 1fr;gap:.75rem;padding:.35rem 0;border-bottom:1px solid var(--rule)}
 ul.dated li:last-child{border-bottom:0}
-.vid{display:flex;gap:.75rem;align-items:flex-start}.thumb{flex:none;line-height:0}.thumb img{width:128px;height:72px;object-fit:cover;border-radius:3px;background:var(--rule)}
+.yt{text-decoration:none;display:inline-block;vertical-align:-.15em;line-height:0}.yt-ico{display:block}
 .yr{padding-top:.12rem;font-variant-numeric:tabular-nums}
 .two{display:grid;grid-template-columns:1fr;gap:0}
 
