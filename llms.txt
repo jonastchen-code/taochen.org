@@ -70,7 +70,7 @@ How environmental, social and governance forces shape firm behaviour: pollution 
 - Page: https://taochen.org/research/bank-deregulation-corporate-environmental-wd-2023/
 - Authors: Shiyi Chen, Tao Chen, Pingyi Lou, Hong Song, Chenyu Wu
 - Published: World Development 161: 106106, 2023. DOI: https://doi.org/10.1016/j.worlddev.2022.106106
-- PDF: https://papers.ssrn.com/sol3/Delivery.cfm?abstractid=3633696 (Working-paper version, SSRN, titled “Bank Competition and Corporate Environmental Performance”)
+- PDF: https://taochen.org/papers/chen-chen-lou-song-wu-2023-wd.pdf (Accepted manuscript, November 2021)
 - Keywords: bank deregulation; bank branching; corporate environmental performance; pollution; China
 - In one sentence: After bank branching deregulation in China, firms more exposed to the deregulation emit less pollution per unit of output.
 - Summary: The paper examines how bank deregulation affects corporate environmental performance, using bank branching deregulation in China and firm-level data on toxic emissions. Firms more exposed to the deregulation lower their chemical oxygen demand (COD) emission intensity compared with less exposed firms. Treated firms also become more productive and reduce the share of tangible assets in total assets, which points to technology upgrading and a change in asset mix as the channels. The paper documents an environmental consequence of banking liberalisation that is relevant for developing countries reforming their banking sectors.
