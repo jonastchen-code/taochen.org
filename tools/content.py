@@ -8,10 +8,10 @@ SSRN = "https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=952261"
 ORCID_URL = "https://orcid.org/0000-0003-4110-0529"
 NTU_PAGE = "https://personal.ntu.edu.sg/jtchen/"
 
-HOME_DESC = ("Tao (Jonas) Chen is Provost's Chair Professor in Finance and Associate Professor of Finance at Nanyang Business School, NTU Singapore. "
+HOME_DESC = ("Tao (Jonas) Chen is Provost's Chair Professor in Finance and Associate Professor in Finance at Nanyang Business School, NTU Singapore. "
              "His research covers sustainable finance; FinTech, AI, and finance; and how investors and monitors shape corporate policy.")
 
-HOME_INTRO = """<p>Welcome. I am an associate professor of finance at Nanyang Business School. My research is in sustainable finance; FinTech, AI, and finance; and how investors and monitors shape corporate policy.</p>"""
+HOME_INTRO = """<p>Welcome. I am an associate professor in finance at Nanyang Business School. My research is in sustainable finance; FinTech, AI, and finance; and how investors and monitors shape corporate policy.</p>"""
 
 STATS = [("5,647", "Citations"), ("20", "h-index"), ("10", "FT50 publications"), ("6", "UTD 24 publications"),
          ("1", "Nature Index publication"), ("Top 2%", "Stanford/Elsevier scientists")]
@@ -30,7 +30,7 @@ EDUCATION = [("2014", "PhD in Finance, The Chinese University of Hong Kong"),
 
 PERSON = {"@type": "Person", "@id": "https://taochen.org/#person", "name": "Tao Chen", "alternateName": ["Tao (Jonas) Chen", "Jonas Chen", "Chen Tao"],
           "url": "https://taochen.org/", "image": "https://taochen.org/assets/img/tao-chen-720.jpg", "email": "mailto:jtchen@ntu.edu.sg",
-          "jobTitle": ["Provost's Chair Professor in Finance", "Associate Professor of Finance"],
+          "jobTitle": ["Provost's Chair Professor in Finance", "Associate Professor in Finance"],
           "worksFor": {"@type": "CollegeOrUniversity", "name": "Nanyang Technological University", "department": {"@type": "Organization", "name": "Nanyang Business School"}},
           "alumniOf": [{"@type": "CollegeOrUniversity", "name": "The Chinese University of Hong Kong"},
                        {"@type": "CollegeOrUniversity", "name": "The Hong Kong University of Science and Technology"},
