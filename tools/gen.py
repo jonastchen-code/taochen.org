@@ -114,7 +114,7 @@ def page(path, title, body, desc, active=None, head_extra="", jsonld=None, page_
 <header class="site">
 <div class="wrap masthead">
 <p class="site-name"><a href="/">{E(NAME)}</a></p>
-<p class="site-tag">Sustainable Finance · FinTech, AI, and Finance · Investors, Monitors and Corporate Policy</p>
+<p class="site-tag">Sustainable Finance · FinTech · AI and Finance · Investors, Monitors and Corporate Policy</p>
 <p class="site-aff">Nanyang Business School, Nanyang Technological University</p>
 </div>
 <div class="navband"><div class="wrap">{nav(active)}</div></div>
