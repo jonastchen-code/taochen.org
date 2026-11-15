@@ -288,7 +288,7 @@ def simple(path, title, body, desc):
     page(path, title, f"<h1>{E(title)}</h1>\n{body}", desc, active=path, jsonld=ld)
 
 def dated(rows):
-    return '<ul class="dated">' + "".join(f'<li><span class="yr">{E(y)}</span> {t}</li>' for y, t in rows) + "</ul>"
+    return '<ul class="dated">' + "".join(f'<li><span class="yr">{E(y)}</span> <span>{t}</span></li>' for y, t in rows) + "</ul>"
 
 def build_pages():
     simple("/teaching/", "Teaching", TEACHING_HTML(dated), f"Courses taught by {NAME} at Nanyang Business School, and doctoral advising.")
