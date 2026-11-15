@@ -16,7 +16,7 @@ HOME_INTRO = """<p>Welcome. I am an associate professor of finance at Nanyang Bu
 STATS = [("5,500+", "Citations"), ("20", "h-index"), ("10", "FT50 publications"), ("6", "UTD 24 publications"),
          ("1", "Nature Index publication"), ("Top 2%", "Stanford/Elsevier scientists")]
 STATS_NOTE = ("Citations and h-index from Google Scholar, October 2026. Journal lists: Financial Times 50, UT Dallas 24, Nature Index. "
-              "Stanford/Elsevier list of the top 2% of scientists, 2025.")
+              "Stanford/Elsevier list of the top 2% of scientists, 2024–2026.")
 
 POSITIONS = [("2025–", "Provost’s Chair Professor in Finance, Nanyang Business School, NTU"),
              ("2020–", "Associate Professor (with tenure) in Finance, NTU"),
@@ -106,7 +106,7 @@ def AWARDS_HTML(dated):
                 ("2023", "Teacher of the Year Award, MSc Finance programme, NTU"),
                 ("2022", "Nanyang Education Award (School), NTU"),
                 ("2019", "NBS Teaching Excellence Award, Nanyang Business School")]
-    honours = [("2025", "Stanford/Elsevier list of the top 2% of scientists"),
+    honours = [("2024–2026", "Stanford/Elsevier list of the top 2% of scientists"),
                ("2016, 2018, 2024", "Visiting Research Fellowship, Hong Kong Monetary Authority"),
                ("2014", "CUHK Young Scholars Thesis Award, The Chinese University of Hong Kong")]
     service = [("2021", "Excellence in Reviewing Award, International Accounting Section, American Accounting Association")]
