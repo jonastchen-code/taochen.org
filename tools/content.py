@@ -20,8 +20,8 @@ STATS_NOTE = ("Citations and h-index from Google Scholar, 15 November 2026. Jour
 
 POSITIONS = [("2025–", "Provost’s Chair Professor in Finance, Nanyang Business School, NTU"),
              ("2020–", "Associate Professor (with tenure) in Finance, NTU"),
-             ("2014–2020", "Assistant Professor in Finance, NTU"),
-             ("2026–", "Fellow, Asian Bureau of Finance and Economic Research (ABFER)"),
+             ("2014–2020", "Assistant Professor in Finance, NTU")]
+FELLOWSHIPS = [("2026–", "Fellow, Asian Bureau of Finance and Economic Research (ABFER)"),
              ("2024–", "Executive Committee and Fellow, NTU Teaching Excellence Academy (TEA)"),
              ("2020–", "Fellow, NTU Institute of Science and Technology for Humanity (NISTH)")]
 EDUCATION = [("2014", "PhD in Finance, The Chinese University of Hong Kong"),
@@ -57,11 +57,13 @@ def TEACHING_HTML(dated):
 <p>I also serve on thesis committees in finance, economics and computer science at NTU, and as an external examiner. Prospective PhD students should apply through the <a href="https://www.ntu.edu.sg/business">Nanyang Business School</a> PhD programme in finance.</p></section>
 <p>Teaching awards are listed on the <a href="/awards/">Awards</a> page.</p>"""
 
+EDITORIAL = [("2025–", "Associate Editor, <cite>The British Accounting Review</cite>"),
+             ("2023–", "Associate Editor, <cite>Journal of Business Research</cite>"),
+             ("2022–", "Associate Editor, <cite>Financial Management</cite>"),
+             ("2023–", "Guest Editor, <cite>Pacific-Basin Finance Journal</cite>")]
+
 def SERVICE_HTML(dated):
-    ed = [("2025–", "Associate Editor, <cite>The British Accounting Review</cite>"),
-          ("2023–", "Associate Editor, <cite>Journal of Business Research</cite>"),
-          ("2022–", "Associate Editor, <cite>Financial Management</cite>"),
-          ("2023–", "Guest Editor, <cite>Pacific-Basin Finance Journal</cite>")]
+    ed = EDITORIAL
     prof = [("2026–", "Fellow, Asian Bureau of Finance and Economic Research (ABFER)"),
             ("2026", "Co-Chair, Financial Management Association (FMA) Asia/Pacific Conference"),
             ("2023–", "Vice President (Programs), Asian Finance Association"),
