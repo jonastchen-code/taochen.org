@@ -230,7 +230,7 @@ How analysts, owners, regulators and governments shape corporate investment, ris
 - Page: https://taochen.org/research/dual-ownership-risk-taking-rof-2023/
 - Authors: Tao Chen, Li Zhang, Qifei Zhu
 - Published: Review of Finance 27(5): 1823–1857, 2023. DOI: https://doi.org/10.1093/rof/rfad007
-- PDF: https://papers.ssrn.com/sol3/Delivery.cfm?abstractid=3427030 (Working-paper version, SSRN)
+- PDF: https://taochen.org/papers/chen-zhang-zhu-2023-rof.pdf (Accepted manuscript, March 2023)
 - Keywords: dual ownership; executive compensation; risk-taking incentives; inside debt; institutional investors
 - In one sentence: When more of a firm is owned by institutions that hold both its shares and its bonds, CEO pay is designed to encourage less risk-taking.
 - Summary: The paper studies how interactions among shareholders, creditors and managers shape executive compensation. Firms with more ownership by “dual holders”, institutional investors that hold both the firm’s equity and its bonds, use less risk-inducing compensation, with fewer stock options and more inside debt. Using mergers of financial institutions that increase or decrease dual ownership in portfolio firms, the paper identifies a causal link between dual ownership and CEO compensation. Mutual fund proxy-voting data suggest that shareholder voting is an important channel through which dual holders implement less convex pay contracts.

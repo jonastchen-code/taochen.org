@@ -170,8 +170,8 @@
   "prog": "investors-monitors",
   "one": "When more of a firm is owned by institutions that hold both its shares and its bonds, CEO pay is designed to encourage less risk-taking.",
   "summary": "The paper studies how interactions among shareholders, creditors and managers shape executive compensation. Firms with more ownership by “dual holders”, institutional investors that hold both the firm’s equity and its bonds, use less risk-inducing compensation, with fewer stock options and more inside debt. Using mergers of financial institutions that increase or decrease dual ownership in portfolio firms, the paper identifies a causal link between dual ownership and CEO compensation. Mutual fund proxy-voting data suggest that shareholder voting is an important channel through which dual holders implement less convex pay contracts.",
-  "pdf": "https://papers.ssrn.com/sol3/Delivery.cfm?abstractid=3427030",
-  "pdf_label": "Working-paper version, SSRN",
+  "pdf": "/papers/chen-zhang-zhu-2023-rof.pdf",
+  "pdf_label": "Accepted manuscript, March 2023",
   "abstract": "This article studies how the three-way interaction among shareholders, creditors, and managers shapes firms’ executive compensation. Firms with a higher ownership share by “dual holders”—institutional investors that simultaneously hold equity and bond of the company—adopt a less risk-inducing compensation structure: less stock options and more inside debt. Exploiting financial institution mergers that increase or decrease dual ownership for portfolio companies, we identify a causal link between dual ownership and CEO compensation policies. Mutual fund proxy voting data suggest that shareholder voting is an important channel for dual holders to implement less convex contracts.",
   "slug": "dual-ownership-risk-taking-rof-2023"
  },
