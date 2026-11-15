@@ -38,8 +38,8 @@ PERSON = {"@type": "Person", "@id": "https://taochen.org/#person", "name": "Tao 
 
 def TEACHING_HTML(dated):
     courses = [("2020–", "FF6121 Investments — MSc Finance"),
-               ("2017–", "BF2201 Investments — undergraduate core course"),
-               ("2019–", "BF2100 Ethics in the Investment Profession — undergraduate"),
+               ("2017–2023", "BF2201 Investments — undergraduate core course"),
+               ("2019–2023", "BF2100 Ethics in the Investment Profession — undergraduate"),
                ("2014–2016", "BF2207 International Finance — undergraduate core course")]
     phd = [("2026", "Yaqi Wang (supervisor) — Associate Professor, Dongbei University of Finance and Economics"),
            ("2023", "Chengyuan Qu (supervisor) — China Securities Regulatory Commission"),
