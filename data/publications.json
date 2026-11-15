@@ -1,5 +1,28 @@
 [
  {
+  "title": "Ecological integrity of avoided deforestation projects",
+  "authors": [
+   "Kelly Ong",
+   "Tao Chen",
+   "Zhimin Chen",
+   "Carlos T. Pérez-Brito",
+   "Yiwen Zeng"
+  ],
+  "journal": "Nature Climate Change",
+  "year": 2026,
+  "vol": "16",
+  "issue": "7",
+  "pages": "769–773",
+  "doi": "10.1038/s41558-026-02657-2",
+  "prog": "sustainable-finance",
+  "one": "Most accredited avoided-deforestation carbon projects do not maintain the ecological condition of forests better than comparable unprotected areas.",
+  "summary": "Avoided-deforestation projects generate carbon credits by reducing forest loss, but it is unclear whether they also keep forests ecologically healthy. The paper compiles 196 accredited projects from major voluntary carbon registries and compares project areas with matched control areas in the same biome, excluding a 10-km zone around each project to allow for local leakage. For the 133 projects with good matches, it evaluates five indicators of ecological integrity: biodiversity intactness, forest landscape integrity, fragmentation, canopy height and net greenhouse-gas flux. Most projects show mixed, negligible or negative effects relative to controls, which points to shortcomings that limit these projects’ ability to safeguard ecosystems and sequester carbon.",
+  "pdf": null,
+  "pdf_label": "",
+  "abstract": "Reducing deforestation is proposed as a global climate action, yet it remains unclear whether carbon projects based on such interventions also maintain forests’ ecological conditions. Here we evaluate 133 projects against matched controls using five ecological-integrity indicators, to show that most projects have mixed, negligible or negative impacts relative to control areas. Results highlight fundamental shortcomings of these climate solutions that limit their ability to safeguard healthy ecosystems and sequester carbon.",
+  "slug": "ecological-integrity-avoided-deforestation-ncc-2026"
+ },
+ {
   "title": "Cultural Lag, Consumer Literacy, and Coping in AI-Enabled Advertising: A Theoretical Explication and Managerial Solutions",
   "authors": [
    "Chen Lou",
@@ -22,29 +45,6 @@
   "pdf_label": "Published version (open access)",
   "abstract": "Artificial intelligence (AI) has transformed the advertising industry, yet important research gaps remain in understanding: (a) the cultural dimensions lagging behind AI-enabled advertising, particularly in ad creation and ad placement; (b) consumer literacy and sensemaking of AI-enabled advertising; and (c) how consumers cope with AI-enabled ads and what solutions they recommend. Our research aims to fill these gaps, guided by the culture lag theory and persuasion knowledge model (PKM). We conducted 12 focus group discussions across different generational cohorts (Gen Z, Millennials, Gen X, Baby Boomers) and found four different cultural aspects that lag behind AI-enabled advertising: consumer beliefs; consumer knowledge and literacy; public policy; and public education. Most participants lack the literacy to differentiate AI-enabled ads from traditional ads in absence of AI disclosure, and they employ various coping strategies to address concerns over AI-enabled ad creation and data privacy risks from AI-enabled ad placement. Theoretically, we enrich the investigation leveraging on the theory of culture lag in explaining the discrepancy between technological development and social structures in context of AI and advertising. We also contribute to the application and theoretical understanding of PKM in AI-enabled advertising.",
   "slug": "cultural-lag-consumer-literacy-ja-2026"
- },
- {
-  "title": "Ecological integrity of avoided deforestation projects",
-  "authors": [
-   "Kelly Ong",
-   "Tao Chen",
-   "Zhimin Chen",
-   "Carlos T. Pérez-Brito",
-   "Yiwen Zeng"
-  ],
-  "journal": "Nature Climate Change",
-  "year": 2026,
-  "vol": "16",
-  "issue": "7",
-  "pages": "769–773",
-  "doi": "10.1038/s41558-026-02657-2",
-  "prog": "sustainable-finance",
-  "one": "Most accredited avoided-deforestation carbon projects do not maintain the ecological condition of forests better than comparable unprotected areas.",
-  "summary": "Avoided-deforestation projects generate carbon credits by reducing forest loss, but it is unclear whether they also keep forests ecologically healthy. The paper compiles 196 accredited projects from major voluntary carbon registries and compares project areas with matched control areas in the same biome, excluding a 10-km zone around each project to allow for local leakage. For the 133 projects with good matches, it evaluates five indicators of ecological integrity: biodiversity intactness, forest landscape integrity, fragmentation, canopy height and net greenhouse-gas flux. Most projects show mixed, negligible or negative effects relative to controls, which points to shortcomings that limit these projects’ ability to safeguard ecosystems and sequester carbon.",
-  "pdf": null,
-  "pdf_label": "",
-  "abstract": "Reducing deforestation is proposed as a global climate action, yet it remains unclear whether carbon projects based on such interventions also maintain forests’ ecological conditions. Here we evaluate 133 projects against matched controls using five ecological-integrity indicators, to show that most projects have mixed, negligible or negative impacts relative to control areas. Results highlight fundamental shortcomings of these climate solutions that limit their ability to safeguard healthy ecosystems and sequester carbon.",
-  "slug": "ecological-integrity-avoided-deforestation-ncc-2026"
  },
  {
   "title": "Minimum Wages, State Ownership, and Corporate Environmental Policies",

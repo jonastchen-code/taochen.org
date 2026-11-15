@@ -53,7 +53,9 @@ for p in PUBS:
     p["keywords"] = KEYWORDS[p["doi"]]
     p["pdf_abs"] = (SITE + p["pdf"]) if (p["pdf"] or "").startswith("/") else p["pdf"]
     if not p["abstract"]: p["abstract"] = DRNTU_ABSTRACTS.get(p["doi"], "")
-PUBS.sort(key=lambda p: (-p["year"], -p["month"]))
+# Jonas (2026-11-15): NCC first and JA 2026 second in every listing; the rest newest first.
+PIN = ["10.1038/s41558-026-02657-2", "10.1080/00913367.2026.2652377"]
+PUBS.sort(key=lambda p: (PIN.index(p["doi"]) if p["doi"] in PIN else len(PIN), -p["year"], -p["month"]))
 
 def cite_line(p):
     s = f"{p['journal']} {p['vol']}"
@@ -152,7 +154,7 @@ def pub_item(p):
 # ---------- Home ----------
 def home():
     # Nature Climate Change paper listed first (Jonas, 14 Nov 2026), then newest.
-    recent = sorted(PUBS, key=lambda p: p["journal"] != "Nature Climate Change")[:5]
+    recent = PUBS[:5]
     stats = "".join(f'<div class="stat"><dt>{E(l)}</dt><dd>{E(v)}</dd></div>' for v, l in STATS)
     rec = "".join(f'<li><a href="/research/{p["slug"]}/">{E(p["display"])}</a> <span class="meta">— <cite>{E(p["journal"])}</cite>, {p["year"]}</span></li>' for p in recent)
     pos = "".join(f'<li><span class="yr">{E(y)}</span> {E(t)}</li>' for y, t in POSITIONS)
