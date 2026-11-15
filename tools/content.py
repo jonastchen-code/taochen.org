@@ -151,12 +151,12 @@ def MEDIA_HTML(dated):
     NTU = "https://personal.ntu.edu.sg/jtchen/"
     op = [("12 Dec 2023", "“The Social Cost of Investor Distraction: Evidence from Institutional Cross-Blockholding”", "Harvard Law School Forum on Corporate Governance", "https://corpgov.law.harvard.edu/2023/12/12/the-social-cost-of-investor-distraction-evidence-from-institutional-cross-blockholding/", ""),
           ("26 Dec 2021", "“Commentary: Binance’s exchange closure in Singapore could usher in more regulations on cryptocurrencies”", "CNA", "https://www.channelnewsasia.com/commentary/binance-withdraws-application-singapore-cryptocurrency-cryptocurrencies-mas-monetary-authority-singapore-2399571", "")]
-    # TV: (date, title, outlet, article, YouTube id). Dates are air dates from 8world's YouTube descriptions.
+    # TV: (date, title, outlet, article, YouTube id). Dates as on Jonas's NTU page.
     tv = [("27 Mar 2026", "“Fuel costs rise $3,000 a month for businesses”", "8world, Frontline", "https://www.8world.com/in-depth/frontline/fuel-costs-rise-3000-a-month-hit-businesses-3098591", "vVB1ZWZte3Y"),
           ("27 Mar 2026", "“How one driver saves a thousand dollars a year on fuel”", "8world, Frontline", "https://www.8world.com/in-depth/frontline/how-man-saves-thousand-a-year-on-fuel-3098581", "zqSTdNNub9M"),
           ("27 Mar 2026", "“Diesel overtakes petrol in price”", "8world, Frontline", "https://www.8world.com/in-depth/frontline/diesel-overtakes-petrol-price-3098571", "kevciVcR4sQ"),
-          ("5 May 2023", "“US Fed interest rate hike”", "Channel 8, Hello Singapore", "", "eTQQfWdM-GU"),
-          ("25 May 2022", "“Inflation”", "Channel 8, Hello Singapore", "", "wFQHH671PqQ"),
+          ("4 May 2023", "“US Fed interest rate hike”", "Channel 8, Hello Singapore", "", "eTQQfWdM-GU"),
+          ("26 May 2022", "“Inflation”", "Channel 8, Hello Singapore", "", "wFQHH671PqQ"),
           ("28 Apr 2022", "“Economic outlook”", "Channel 8, Hello Singapore", "", "cnA43TXGVIo@122"),
           ("28 Apr 2022", "“Q1 labour market advance release”", "Channel 8 News", "", "Ljwg4ugyMZQ")]
     quoted = [("30 Jul 2023", "On investment advice from financial influencers", "Lianhe Zaobao", "https://www.zaobao.com.sg/finance/singapore/story20230730-1418143", ""),
