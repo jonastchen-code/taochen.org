@@ -149,10 +149,13 @@ def TALKS_HTML(dated):
 def MEDIA_HTML(dated):
     op = [("12 Dec 2023", "“The Social Cost of Investor Distraction: Evidence from Institutional Cross-Blockholding”", "Harvard Law School Forum on Corporate Governance"),
           ("26 Dec 2021", "“Commentary: Binance’s exchange closure in Singapore could usher in more regulations on cryptocurrencies”", "CNA")]
-    tv = [("27 Mar 2026", "Fuel costs; diesel and petrol prices; saving on fuel (three segments)", "8world, Frontline"),
+    tv = [("27 Mar 2026", "“Fuel costs rise 3,000 a month hit businesses”", "8world, Frontline"),
+          ("27 Mar 2026", "“How man saves thousand a year on fuel”", "8world, Frontline"),
+          ("27 Mar 2026", "“Diesel overtakes petrol price”", "8world, Frontline"),
           ("4 May 2023", "US Federal Reserve interest rate rise", "Channel 8, Hello Singapore"),
           ("26 May 2022", "Inflation", "Channel 8, Hello Singapore"),
-          ("28 Apr 2022", "Economic outlook; first-quarter labour market release", "Channel 8")]
+          ("28 Apr 2022", "Economic outlook", "Channel 8, Hello Singapore"),
+          ("28 Apr 2022", "First-quarter labour market advance release", "Channel 8")]
     quoted = [("30 Jul 2023", "On investment advice from financial influencers", "Lianhe Zaobao"),
               ("15 Jun 2023", "“Can the Asean Taxonomy help achieve the region's sustainability ambitions?”", "Eco-Business"),
               ("25 Jan 2023", "On the Global Financial Centres Index, Singapore and Hong Kong", "Lianhe Zaobao"),
