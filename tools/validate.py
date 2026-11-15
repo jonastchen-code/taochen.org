@@ -75,6 +75,16 @@ for doi, x in EXTRA.items():
     card = next((k for k in cards if f'href="/research/{slug}/"' in k), "")
     c["papers.html card → page"] = bool(card) and card.count(f'href="/research/{slug}/"') == 2
     c["papers.html card → PDF"] = (f'href="{html.escape(x["pdf"], quote=True)}"' in card) if x["pdf"] else ("PDF not yet publicly available" in card)
+    # four-layer sync (Jonas, 2026-11-15): 1 card sentence, 2 page summary, 3 hidden search text, 4 machine metadata
+    one, summ = x["one"], x["summary"]
+    c["L1 card sentence = source"] = f'<span class="label">In one sentence:</span> {html.escape(one, quote=True)}</p>' in card
+    c["L1 page sentence = source"] = f'<h2 id="h-one">In one sentence</h2><p>{html.escape(one, quote=True)}</p>' in src
+    c["L2 page summary = source"] = f'<h2 id="h-sum">Summary</h2><p>{html.escape(summ, quote=True)}</p>' in src
+    ds = re.search(r'data-search="([^"]*)"', card)
+    c["L3 search text has sentence"] = bool(ds) and U(ds.group(1)) == U(ds.group(1)) and html.escape(one.lower(), quote=True) in ds.group(1)
+    c["L4 meta+og description = sentence"] = [U(v) for v in m(p, "description")] == [one] and [U(v) for v in m(p, "og:description", "property")] == [one]
+    c["L4 ld:description = sentence"] = art.get("description") == one
+    c["L4 citation_abstract present (published abstract, by design)"] = bool(m(p, "citation_abstract"))
     bad = [k for k, v in c.items() if not v]
     if bad: fails.append((slug, bad))
     rows.append((slug, pub["year"], "yes" if exp_pdf else "none public", len(c) - len(bad), len(c), bad))
