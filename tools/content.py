@@ -80,7 +80,7 @@ def SERVICE_HTML(dated):
             ("2020–", "Fellow, NTU Institute of Science and Technology for Humanity")]
     return f"""<section aria-labelledby="h-e"><h2 id="h-e">Editorial</h2>{dated(ed)}</section>
 <section aria-labelledby="h-pr"><h2 id="h-pr">Professional associations and conferences</h2>{dated(prof)}
-<p>Program committees: European Finance Association Annual Meeting; SFS Cavalcade Asia-Pacific; FMA Asia/Pacific Conference; American Marketing Association Winter Academic Conference.</p></section>
+<p>Program committees: European Finance Association Annual Meeting; SFS Cavalcade Asia-Pacific; FMA Asia/Pacific Conference; American Marketing Association Winter Academic Conference, etc.</p></section>
 <section aria-labelledby="h-u"><h2 id="h-u">University</h2>{dated(univ)}</section>
 <section aria-labelledby="h-g"><h2 id="h-g">Grant review and refereeing</h2>
 <p>Grant reviewer for the Swiss National Science Foundation, the Research Grants Council of Hong Kong, the Hong Kong Monetary Authority / Hong Kong Institute for Monetary Research, etc.</p>
