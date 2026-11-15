@@ -80,7 +80,7 @@ def nav(active):
     return f'<nav aria-label="Main"><ul>{items}</ul></nav>'
 
 def page(path, title, body, desc, active=None, head_extra="", jsonld=None, page_title=None, og_type="website", full_title=None, index=True):
-    full_title = full_title or (f"{title} | {NAME}" if title != NAME else f"{NAME} | Nanyang Business School")
+    full_title = full_title or (f"{title} | {NAME}" if title != NAME else f"{NAME} | NBS | NTU")
     url = SITE + path
     ld = f'<script type="application/ld+json">{json.dumps(jsonld, ensure_ascii=False, indent=1)}</script>' if jsonld else ""
     doc = f"""<!doctype html>
@@ -189,7 +189,7 @@ def home():
                   hasOccupation={"@type": "Occupation", "name": "Professor of Finance"})
     ld = {"@context": "https://schema.org", "@graph": [
           {"@type": "WebSite", "@id": SITE + "/#website", "url": SITE + "/", "name": NAME, "inLanguage": "en", "publisher": {"@id": SITE + "/#person"}},
-          {"@type": "ProfilePage", "@id": SITE + "/#profile", "url": SITE + "/", "name": f"{NAME} | Nanyang Business School",
+          {"@type": "ProfilePage", "@id": SITE + "/#profile", "url": SITE + "/", "name": f"{NAME} | NBS | NTU",
            "isPartOf": {"@id": SITE + "/#website"}, "dateModified": UPDATED_ISO, "mainEntity": {"@id": SITE + "/#person"}},
           person]}
     page("/", NAME, body, HOME_DESC, active="/", jsonld=ld)
