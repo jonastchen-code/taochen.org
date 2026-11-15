@@ -185,7 +185,7 @@ How financial technology and artificial intelligence change access to credit, in
 - Page: https://taochen.org/research/finance-firm-volatility-small-ms-2022/
 - Authors: Tao Chen, Yi Huang, Chen Lin, Zixia Sheng
 - Published: Management Science 68(3): 2226–2249, 2022. DOI: https://doi.org/10.1287/mnsc.2020.3942
-- PDF: not yet publicly available
+- PDF: https://taochen.org/papers/chen-huang-lin-sheng-2022-ms.pdf (Accepted manuscript, October 2020)
 - Keywords: FinTech credit; small business lending; firm volatility; Alibaba; regression discontinuity; China
 - In one sentence: Access to FinTech credit on Alibaba’s platform makes small online businesses’ sales less volatile and makes them less likely to exit.
 - Summary: Alibaba’s online trading platform provides FinTech credit to millions of micro, small and medium-sized enterprises. Using daily sales data and an internal credit-score threshold that governs who receives credit, the paper applies a fuzzy regression discontinuity design to estimate the causal effect of credit access on firm volatility. Credit access significantly reduces sales volatility, especially for firms with fewer alternative sources of financing, and firms with FinTech credit are less likely to go bankrupt or exit later. Firms with credit invest more in advertising and in product and sector diversification, particularly during downturns, which are the channels through which credit reduces volatility.
