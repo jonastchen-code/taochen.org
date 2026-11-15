@@ -57,9 +57,9 @@ def TEACHING_HTML(dated):
 <p>I also serve on thesis committees in finance, economics and computer science at NTU, and as an external examiner. Prospective PhD students should apply through the <a href="https://www.ntu.edu.sg/business">Nanyang Business School</a> PhD programme in finance.</p></section>
 <p>Teaching awards are listed on the <a href="/awards/">Awards</a> page.</p>"""
 
-EDITORIAL = [("2025–", "Associate Editor, <cite>The British Accounting Review</cite>"),
+EDITORIAL = [("2022–", "Associate Editor, <cite>Financial Management</cite>"),  # FM first (Jonas, 15 Nov 2026)
+             ("2025–", "Associate Editor, <cite>The British Accounting Review</cite>"),
              ("2023–", "Associate Editor, <cite>Journal of Business Research</cite>"),
-             ("2022–", "Associate Editor, <cite>Financial Management</cite>"),
              ("2023–", "Guest Editor, <cite>Pacific-Basin Finance Journal</cite>")]
 
 def SERVICE_HTML(dated):

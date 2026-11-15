@@ -191,14 +191,10 @@ def home():
 <ul class="recent">{rec}</ul>
 <p><a href="{PAPERS}">All {len(PUBS)} papers</a></p>
 </section>
-<div class="two">
 <section aria-labelledby="h-pos"><h2 id="h-pos">Positions</h2><ul class="dated">{pos}</ul></section>
-<section aria-labelledby="h-edu"><h2 id="h-edu">Education</h2><ul class="dated">{edu}</ul></section>
-</div>
-<div class="two">
 <section aria-labelledby="h-fel"><h2 id="h-fel">Fellowships</h2><ul class="dated">{fel}</ul></section>
 <section aria-labelledby="h-edi"><h2 id="h-edi">Editorial</h2><ul class="dated">{edi}</ul></section>
-</div>"""
+<section aria-labelledby="h-edu"><h2 id="h-edu">Education</h2><ul class="dated">{edu}</ul></section>"""
     person = dict(PERSON, description=HOME_DESC, workLocation={"@type": "Place", "name": "Singapore"},
                   hasOccupation={"@type": "Occupation", "name": "Professor of Finance"})
     ld = {"@context": "https://schema.org", "@graph": [
