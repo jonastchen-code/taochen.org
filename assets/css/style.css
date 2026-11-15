@@ -30,7 +30,7 @@ header.site{padding:0}
 .masthead{text-align:center;padding:1.75rem 1rem 1.1rem}
 .masthead .site-name{font-size:var(--fs-h1);margin:0 0 .35rem}
 .site-tag,.masthead .site-aff{margin:0;font-size:var(--fs-small);color:var(--muted);letter-spacing:.04em}
-.site-tag{color:var(--ink)}
+.site-tag{color:var(--ink);text-transform:uppercase;letter-spacing:.08em}
 .navband{background:#1F3A5F}
 .navband nav ul{justify-content:center;gap:0 1.4rem}
 .navband nav a{color:#E8EEF6;padding:.6rem 0}
