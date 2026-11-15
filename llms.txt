@@ -195,7 +195,7 @@ How financial technology and artificial intelligence change access to credit, in
 - Page: https://taochen.org/research/impact-competition-innovations-it-jmis-2021/
 - Authors: Tao Chen, Hsing Kenneth Cheng, Yong (Jimmy) Jin, Shengli Li, Liangfei Qiu
 - Published: Journal of Management Information Systems 38(3): 647–666, 2021. DOI: https://doi.org/10.1080/07421222.2021.1962590
-- PDF: not yet publicly available
+- PDF: https://taochen.org/papers/chen-cheng-jin-li-qiu-2021-jmis.pdf (Accepted manuscript, April 2021)
 - Keywords: product market competition; innovation; patents; IT industry; import tariffs
 - In one sentence: More product-market competition leads IT firms to produce more, and more highly cited, patents.
 - Summary: The paper examines the causal relationship between product-market competition and innovation in the information technology (IT) industry, measuring innovation by patent counts (quantity) and non-self citations (quality). Using the Herfindahl–Hirschman Index and natural experiments, it finds robust evidence that competition increases innovation. After import tariff cuts raised competition, patents per IT firm rose by 27.3 percent and non-self citations per firm by 38.2 percent on average, with larger effects in more competitive sectors. The authors attribute the positive effect mainly to a parallel-search effect and note that lower import barriers may bring welfare gains through innovation.
