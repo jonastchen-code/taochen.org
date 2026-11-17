@@ -13,9 +13,9 @@ HOME_DESC = ("Tao (Jonas) Chen is Provost's Chair Professor in Finance and Assoc
 
 HOME_INTRO = """<p>Welcome. I am an associate professor in finance at Nanyang Business School. My research is in sustainable finance; FinTech, AI, and finance; and how investors and monitors shape corporate policy.</p>"""
 
-STATS = [("5,647", "Citations"), ("20", "h-index"), ("10", "FT50 publications"), ("6", "UTD 24 publications"),
+STATS = [("5,649", "Citations"), ("20", "h-index"), ("10", "FT50 publications"), ("6", "UTD 24 publications"),
          ("1", "Nature Index publication"), ("Top 2%", "Stanford/Elsevier scientists")]
-STATS_NOTE = ("Citations and h-index from Google Scholar, 15 November 2026. Journal lists: Financial Times 50, UT Dallas 24, Nature Index. "
+STATS_NOTE = ("Citations and h-index from Google Scholar, 17 November 2026. Journal lists: Financial Times 50, UT Dallas 24, Nature Index. "
               "Stanford/Elsevier list of the top 2% of scientists, 2024–2026.")
 
 POSITIONS = [("2025–", "Provost’s Chair Professor in Finance, Nanyang Business School, NTU"),
