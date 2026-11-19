@@ -10,6 +10,7 @@ SITE = "https://taochen.org"
 UPDATED_ISO = "2026-11-15"
 UPDATED = "15 November 2026"
 NAME = "Tao (Jonas) Chen"
+GOATCOUNTER = "taochen"  # cookie-free visit and click counts at https://taochen.goatcounter.com; "" turns it off
 E = lambda s: html.escape(str(s), quote=True)
 
 NAV = [("/", "Home"), ("/papers.html", "Research"), ("/teaching/", "Teaching"), ("/service/", "Service"),
@@ -79,6 +80,8 @@ def nav(active):
     items = "".join(f'<li><a href="{h}"{" aria-current=\"page\"" if h == active else ""}>{E(t)}</a></li>' for h, t in NAV)
     return f'<nav aria-label="Main"><ul>{items}</ul></nav>'
 
+GC_TAGS = (f'\n<script data-goatcounter="https://{GOATCOUNTER}.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>'
+           '\n<script src="/assets/js/track.js" defer></script>') if GOATCOUNTER else ""
 def page(path, title, body, desc, active=None, head_extra="", jsonld=None, page_title=None, og_type="website", full_title=None, index=True):
     full_title = full_title or (f"{title} | {NAME}" if title != NAME else f"{NAME} | NBS | NTU")
     url = SITE + path
@@ -107,7 +110,7 @@ def page(path, title, body, desc, active=None, head_extra="", jsonld=None, page_
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;1,400&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap">
 <link rel="stylesheet" href="{CSS_URL}">
-{head_extra}{ld}
+{head_extra}{ld}{GC_TAGS}
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
