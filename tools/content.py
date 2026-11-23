@@ -1,5 +1,5 @@
 # Page content for taochen.org. Source: CV Tao Chen_Oct2026.docx (Dropbox, modified 14 Oct 2026)
-# and CV-Tao_CHEN_NTU_June2026.docx (keynote topics).
+# and CV-Tao_CHEN_NTU_Nov2026.docx (keynote topics).
 import html
 E = lambda s: html.escape(str(s), quote=True)
 
@@ -122,10 +122,11 @@ def AWARDS_HTML(dated):
 <section aria-labelledby="h-sa"><h2 id="h-sa">Service</h2>{f(service)}</section>"""
 
 def TALKS_HTML(dated):
-    keynotes = [("Jan 2026", "10th China Accounting and Finance Conference, Hangzhou", "Sustainable Finance: ESG and ESG Investing"),
+    keynotes = [("Dec 2026", "2026 Massey Sustainable Finance Conference, Queenstown", "Sustainable Finance and Beyond: From Investors and Institutions to Real Impact"),
+                ("Jan 2026", "10th China Accounting and Finance Conference, Hangzhou", "Sustainable Finance: ESG and ESG Investing"),
                 ("Dec 2025", "2025 International Conference on Business and Finance, Ho Chi Minh City", "Sustainable Finance: ESG and ESG Investing"),
                 ("Jan 2025", "9th China Accounting and Finance Conference, Wuhan", "Generative AI and Mutual Fund Investment"),
-                ("Oct 2024", "10th Indonesian Finance Association International Conference, Jakarta (plenary)", "Investment Research in Emerging Capital Markets"),
+                ("Oct 2024", "10th Indonesian Finance Association International Conference, Jakarta", "Investment Research in Emerging Capital Markets"),
                 ("Aug 2024", "2024 Accounting and Finance Summer School, Wuhan", "Sustainable Finance and FinTech"),
                 ("Jul 2024", "2024 Accounting and Finance Workshop, Guangzhou", "FinTech Lending, Generative AI, and Mutual Funds: Evidence from FinTech Data in China"),
                 ("Jul 2019", "2019 International Conference on Financial Markets, Jinan", "Finance and Firm Volatility"),
