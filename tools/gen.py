@@ -168,6 +168,7 @@ def home():
     pos = "".join(f'<li><span class="yr">{E(y)}</span> {E(t)}</li>' for y, t in POSITIONS)
     fel = "".join(f'<li><span class="yr">{E(y)}</span> {E(t)}</li>' for y, t in FELLOWSHIPS)
     edi = "".join(f'<li><span class="yr">{E(y)}</span> <span>{t}</span></li>' for y, t in EDITORIAL)
+    news = "".join(f'<li><span class="yr">{E(y)}</span> <span>{x}</span></li>' for y, x in NEWS)
     edu = "".join(f'<li><span class="yr">{E(y)}</span> {E(t)}</li>' for y, t in EDUCATION)
     progs = "".join(f'<li><a href="{PAPERS}#{pid}">{E(name)}</a></li>' for pid, name, _ in PROGRAMS)
     body = f"""<div class="intro">
@@ -182,6 +183,10 @@ def home():
 <h2 id="h-record">Research record</h2>
 <dl class="stats">{stats}</dl>
 <p class="meta">{STATS_NOTE}</p>
+</section>
+<section aria-labelledby="h-news">
+<h2 id="h-news">News</h2>
+<ul class="dated news">{news}</ul>
 </section>
 <section aria-labelledby="h-programs">
 <h2 id="h-programs">Research programs</h2>
