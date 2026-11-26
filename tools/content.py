@@ -153,7 +153,7 @@ def TALKS_HTML(dated):
     policy_roles = [("2016, 2018, 2024", "Visiting Research Fellow, Hong Kong Monetary Authority (HKMA), Hong Kong Institute for Monetary and Financial Research (HKIMR)"),
                     ("2015–", "Grant reviewer, HKMA / HKIMR"),
                     ("2026", "<cite>Nature Climate Change</cite> paper on avoided-deforestation carbon projects, co-authored with Carlos T. Pérez-Brito of the World Bank"),
-                    ("2025", "HKIMR Working Paper: “The Impact of Artificial Intelligence on Individual Manual Investment Decisions: Empirical Evidence from Mutual Funds” (with Yue Guo, Siliang (Jack) Tong, Subodha Kumar and Shumiao Ouyang)"),
+                    ("2025", "HKIMR Applied Research Paper No. 02/2025: “<a href=\"https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5252043\">The Impact of Artificial Intelligence on Individual Manual Investment Decisions: Empirical Evidence from Mutual Funds</a>” (with Yue Guo, Siliang (Jack) Tong, Subodha Kumar and Shumiao Ouyang)"),
                     ("2017", "HKIMR Working Paper No. 05/2017: “Financial Flexibility and Corporate Cash Policy” (with Jarrad Harford and Chen Lin)"),
                     ("2012", "HKIMR Working Paper No. 05/2012: “Financial Innovation: The Bright and the Dark Sides” (with Thorsten Beck, Chen Lin and Frank M. Song)")]
     pol = dated([(d, f"{E(v)}<br><span class=\"meta\">{E(t)}</span>") for d, v, t in policy] + policy_roles)
