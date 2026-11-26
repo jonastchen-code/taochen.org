@@ -152,7 +152,7 @@ def TALKS_HTML(dated):
 def MEDIA_HTML(dated):
     # (date, title, outlet, link, video); links as on personal.ntu.edu.sg/jtchen (checked 2026-11-15)
     NTU = "https://personal.ntu.edu.sg/jtchen/"
-    op = [("Sep 2026", "“如何做好科技金融大文章：新加坡股市支持硬科技的经验与教训” (Financing hard tech: lessons from Singapore’s stock market), with Xiaoyu Chen", "Tsinghua Financial Review (清华金融评论)", "", ""),
+    op = [("Sep 2026", "“Getting Tech Finance Right: Lessons from Singapore’s Stock Market Support for Hard Tech” (with Xiaoyu Chen)", "Tsinghua Financial Review", "", ""),
           ("12 Dec 2023", "“The Social Cost of Investor Distraction: Evidence from Institutional Cross-Blockholding”", "Harvard Law School Forum on Corporate Governance", "https://corpgov.law.harvard.edu/2023/12/12/the-social-cost-of-investor-distraction-evidence-from-institutional-cross-blockholding/", ""),
           ("26 Dec 2021", "“Commentary: Binance’s exchange closure in Singapore could usher in more regulations on cryptocurrencies”", "CNA", "https://www.channelnewsasia.com/commentary/binance-withdraws-application-singapore-cryptocurrency-cryptocurrencies-mas-monetary-authority-singapore-2399571", "")]
     # TV: (date, title, outlet, article, YouTube id). Dates as on Jonas's NTU page.
