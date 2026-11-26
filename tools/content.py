@@ -153,7 +153,7 @@ def MEDIA_HTML(dated):
     # (date, title, outlet, link, video); links as on personal.ntu.edu.sg/jtchen (checked 2026-11-15)
     NTU = "https://personal.ntu.edu.sg/jtchen/"
     policy = [("Sep 2026", "“Lessons from Singapore’s Stock Market Support for Hard Tech” (with Xiaoyu Chen; in Chinese)", "Tsinghua Financial Review (cover feature)", "https://news.qq.com/rain/a/20260913A07G7W00", ""),
-              ("12 Dec 2023", "“The Social Cost of Investor Distraction: Evidence from Institutional Cross-Blockholding”", "Harvard Law School Forum on Corporate Governance", "https://corpgov.law.harvard.edu/2023/12/12/the-social-cost-of-investor-distraction-evidence-from-institutional-cross-blockholding/", "")]
+              ("12 Dec 2023", "“The Social Cost of Investor Distraction: Evidence from Institutional Cross-Blockholding” (with Vivek Astvansh and Jimmy Chengyuan Qu)", "Harvard Law School Forum on Corporate Governance", "https://corpgov.law.harvard.edu/2023/12/12/the-social-cost-of-investor-distraction-evidence-from-institutional-cross-blockholding/", "")]
     op = [("26 Dec 2021", "“Commentary: Binance’s exchange closure in Singapore could usher in more regulations on cryptocurrencies”", "CNA", "https://www.channelnewsasia.com/commentary/binance-withdraws-application-singapore-cryptocurrency-cryptocurrencies-mas-monetary-authority-singapore-2399571", "")]
     # TV: (date, title, outlet, article, YouTube id). Dates as on Jonas's NTU page.
     tv = [("27 Mar 2026", "“Fuel costs rise $3,000 a month for businesses”", "8world, Frontline", "https://www.8world.com/in-depth/frontline/fuel-costs-rise-3000-a-month-hit-businesses-3098591", "vVB1ZWZte3Y"),
