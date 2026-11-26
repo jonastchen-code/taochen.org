@@ -21,7 +21,7 @@ STATS_NOTE = ("Citations and h-index from Google Scholar, 26 November 2026. Jour
 POSITIONS = [("2025–", "Provost’s Chair Professor in Finance, Nanyang Business School, NTU"),
              ("2020–", "Associate Professor (with tenure) in Finance, NTU"),
              ("2014–2020", "Assistant Professor in Finance, NTU"),
-             ("2016, 2018, 2024", "Visiting Research Fellow, Hong Kong Monetary Authority (HKMA), Hong Kong Institute for Monetary Research (HKIMR)")]
+             ("2016, 2018, 2024", "Visiting Research Fellow, Hong Kong Monetary Authority (HKMA), Hong Kong Institute for Monetary and Financial Research (HKIMR)")]
 FELLOWSHIPS = [("2026–", "Fellow, Asian Bureau of Finance and Economic Research (ABFER)"),
              ("2024–", "Executive Committee and Fellow, NTU Teaching Excellence Academy (TEA)"),
              ("2020–", "Fellow, NTU Institute of Science and Technology for Humanity (NISTH)")]
