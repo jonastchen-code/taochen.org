@@ -20,11 +20,11 @@ STATS_NOTE = ("Citations and h-index from Google Scholar, 26 November 2026. Jour
 
 POSITIONS = [("2025–", "Provost’s Chair Professor in Finance, Nanyang Business School, NTU"),
              ("2020–", "Associate Professor (with tenure) in Finance, NTU"),
-             ("2014–2020", "Assistant Professor in Finance, NTU"),
-             ("2016, 2018, 2024", "Visiting Research Fellow, Hong Kong Monetary Authority (HKMA), Hong Kong Institute for Monetary and Financial Research (HKIMR)")]
+             ("2014–2020", "Assistant Professor in Finance, NTU")]
 FELLOWSHIPS = [("2026–", "Fellow, Asian Bureau of Finance and Economic Research (ABFER)"),
              ("2024–", "Executive Committee and Fellow, NTU Teaching Excellence Academy (TEA)"),
-             ("2020–", "Fellow, NTU Institute of Science and Technology for Humanity (NISTH)")]
+             ("2020–", "Fellow, NTU Institute of Science and Technology for Humanity (NISTH)"),
+             ("2016, 2018, 2024", "Visiting Research Fellow, Hong Kong Monetary Authority (HKMA), Hong Kong Institute for Monetary and Financial Research (HKIMR)")]
 EDUCATION = [("2014", "PhD in Finance, The Chinese University of Hong Kong"),
              ("2011", "MPhil in Finance, The Hong Kong University of Science and Technology"),
              ("2004", "BA in English and Finance, Beijing Foreign Studies University")]
@@ -70,7 +70,8 @@ def SERVICE_HTML(dated):
             ("2023–", "Vice President (Programs), Asian Finance Association"),
             ("2023–", "Co-Chair, Asian Finance Association Annual Conference"),
             ("2021–", "Board Member, Asian Finance Association"),
-            ("2020–2023", "Co-Chair, Singapore Scholars Symposium")]
+            ("2020–2023", "Co-Chair, Singapore Scholars Symposium"),
+            ("2016, 2018, 2024", "Visiting Research Fellow, Hong Kong Monetary Authority (HKMA), Hong Kong Institute for Monetary and Financial Research (HKIMR)")]
     univ = [("2026–", "Faculty Affiliate, Global Institute of Finance, Technology, and Society (GIFTS), NTU"),
             ("2024–", "Executive Committee and Fellow, NTU Teaching Excellence Academy"),
             ("2023–", "Academic Director, MSc Finance programme, Nanyang Business School"),
@@ -84,7 +85,7 @@ def SERVICE_HTML(dated):
 <p>Program committees: European Finance Association Annual Meeting; SFS Cavalcade Asia-Pacific; FMA Asia/Pacific Conference; American Marketing Association Winter Academic Conference, etc.</p></section>
 <section aria-labelledby="h-u"><h2 id="h-u">University</h2>{dated(univ)}</section>
 <section aria-labelledby="h-g"><h2 id="h-g">Grant review and refereeing</h2>
-<p>Recent grant reviews for the Swiss National Science Foundation, the Research Grants Council of Hong Kong, the Hong Kong Monetary Authority / Hong Kong Institute for Monetary Research, etc.</p>
+<p>Recent grant reviews for the Swiss National Science Foundation, the Research Grants Council of Hong Kong, the Hong Kong Monetary Authority / Hong Kong Institute for Monetary and Financial Research, etc.</p>
 <p>Recent refereeing for journals including <cite>Review of Financial Studies</cite>, <cite>Management Science</cite>, <cite>The Accounting Review</cite>, <cite>Journal of Financial and Quantitative Analysis</cite>, <cite>Review of Finance</cite>, <cite>Contemporary Accounting Research</cite>, <cite>Research Policy</cite>, <cite>Journal of Public Economics</cite>, <cite>Journal of Development Economics</cite>, <cite>Journal of Corporate Finance</cite>, etc.</p></section>"""
 
 def AWARDS_HTML(dated):
