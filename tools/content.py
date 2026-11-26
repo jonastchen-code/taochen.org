@@ -152,8 +152,9 @@ def TALKS_HTML(dated):
 def MEDIA_HTML(dated):
     # (date, title, outlet, link, video); links as on personal.ntu.edu.sg/jtchen (checked 2026-11-15)
     NTU = "https://personal.ntu.edu.sg/jtchen/"
-    op = [("12 Dec 2023", "“The Social Cost of Investor Distraction: Evidence from Institutional Cross-Blockholding”", "Harvard Law School Forum on Corporate Governance", "https://corpgov.law.harvard.edu/2023/12/12/the-social-cost-of-investor-distraction-evidence-from-institutional-cross-blockholding/", ""),
-          ("26 Dec 2021", "“Commentary: Binance’s exchange closure in Singapore could usher in more regulations on cryptocurrencies”", "CNA", "https://www.channelnewsasia.com/commentary/binance-withdraws-application-singapore-cryptocurrency-cryptocurrencies-mas-monetary-authority-singapore-2399571", "")]
+    policy = [("Sep 2026", "“Lessons from Singapore’s Stock Market Support for Hard Tech” (with Xiaoyu Chen; in Chinese)", "Tsinghua Financial Review (cover feature)", "https://news.qq.com/rain/a/20260913A07G7W00", ""),
+              ("12 Dec 2023", "“The Social Cost of Investor Distraction: Evidence from Institutional Cross-Blockholding” (with Vivek Astvansh and Jimmy Chengyuan Qu)", "Harvard Law School Forum on Corporate Governance", "https://corpgov.law.harvard.edu/2023/12/12/the-social-cost-of-investor-distraction-evidence-from-institutional-cross-blockholding/", "")]
+    op = [("26 Dec 2021", "“Commentary: Binance’s exchange closure in Singapore could usher in more regulations on cryptocurrencies”", "CNA", "https://www.channelnewsasia.com/commentary/binance-withdraws-application-singapore-cryptocurrency-cryptocurrencies-mas-monetary-authority-singapore-2399571", "")]
     # TV: (date, title, outlet, article, YouTube id). Dates as on Jonas's NTU page.
     tv = [("27 Mar 2026", "“Fuel costs rise $3,000 a month for businesses”", "8world, Frontline", "https://www.8world.com/in-depth/frontline/fuel-costs-rise-3000-a-month-hit-businesses-3098591", "vVB1ZWZte3Y"),
           ("27 Mar 2026", "“How one driver saves a thousand dollars a year on fuel”", "8world, Frontline", "https://www.8world.com/in-depth/frontline/how-man-saves-thousand-a-year-on-fuel-3098581", "zqSTdNNub9M"),
@@ -191,7 +192,8 @@ def MEDIA_HTML(dated):
         return h
     f = lambda rows: dated([(d, row(t, o, l, v)) for d, t, o, l, v in rows])
     ftv = lambda rows: dated([(d, tvrow(t, o, l, v)) for d, t, o, l, v in rows])
-    return f"""<section aria-labelledby="h-o"><h2 id="h-o">Commentary</h2>{f(op)}</section>
+    return f"""<section aria-labelledby="h-pa"><h2 id="h-pa">Policy articles</h2>{f(policy)}</section>
+<section aria-labelledby="h-o"><h2 id="h-o">Commentary</h2>{f(op)}</section>
 <section aria-labelledby="h-tv"><h2 id="h-tv">Television interviews</h2>{ftv(tv)}</section>
 <section aria-labelledby="h-q"><h2 id="h-q">Quoted in the news</h2>{f(quoted)}</section>
 <section aria-labelledby="h-rc"><h2 id="h-rc">Coverage of research</h2>{f(research)}</section>"""
