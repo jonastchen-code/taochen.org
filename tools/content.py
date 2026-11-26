@@ -153,12 +153,14 @@ def TALKS_HTML(dated):
     policy_roles = [("2016, 2018, 2024", "Visiting Research Fellow, Hong Kong Monetary Authority (HKMA), Hong Kong Institute for Monetary and Financial Research (HKIMR)"),
                     ("2015–", "Grant reviewer, HKMA / HKIMR"),
                     ("2026", "<cite>Nature Climate Change</cite> paper on avoided-deforestation carbon projects, co-authored with Carlos T. Pérez-Brito of the World Bank"),
-                    ("2017", "HKIMR Working Paper: “Financial Flexibility and Corporate Cash Policy” (with Jarrad Harford and Chen Lin)")]
+                    ("2025", "HKIMR Working Paper: “The Impact of Artificial Intelligence on Individual Manual Investment Decisions: Empirical Evidence from Mutual Funds” (with Yue Guo, Siliang (Jack) Tong, Subodha Kumar and Shumiao Ouyang)"),
+                    ("2017", "HKIMR Working Paper No. 05/2017: “Financial Flexibility and Corporate Cash Policy” (with Jarrad Harford and Chen Lin)"),
+                    ("2012", "HKIMR Working Paper No. 05/2012: “Financial Innovation: The Bright and the Dark Sides” (with Thorsten Beck, Chen Lin and Frank M. Song)")]
     pol = dated([(d, f"{E(v)}<br><span class=\"meta\">{E(t)}</span>") for d, v, t in policy] + policy_roles)
     k = dated([(d, f"{E(v)}<br><span class=\"meta\">{E(t)}</span>") for d, v, t in keynotes])
-    return f"""<section aria-labelledby="h-pol"><h2 id="h-pol">Policy engagement</h2>{pol}</section>
-<section aria-labelledby="h-k"><h2 id="h-k">Keynote speeches</h2>{k}</section>
-<section aria-labelledby="h-s"><h2 id="h-s">Invited seminars</h2>{dated([(y, E(t)) for y, t in seminars])}</section>"""
+    return f"""<section aria-labelledby="h-k"><h2 id="h-k">Keynote speeches</h2>{k}</section>
+<section aria-labelledby="h-s"><h2 id="h-s">Invited seminars</h2>{dated([(y, E(t)) for y, t in seminars])}</section>
+<section aria-labelledby="h-pol"><h2 id="h-pol">Policy engagement</h2>{pol}</section>"""
 
 def MEDIA_HTML(dated):
     # (date, title, outlet, link, video); links as on personal.ntu.edu.sg/jtchen (checked 2026-11-15)
