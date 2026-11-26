@@ -20,7 +20,8 @@ STATS_NOTE = ("Citations and h-index from Google Scholar, 26 November 2026. Jour
 
 POSITIONS = [("2025–", "Provost’s Chair Professor in Finance, Nanyang Business School, NTU"),
              ("2020–", "Associate Professor (with tenure) in Finance, NTU"),
-             ("2014–2020", "Assistant Professor in Finance, NTU")]
+             ("2014–2020", "Assistant Professor in Finance, NTU"),
+             ("2016, 2018, 2024", "Visiting Research Fellow, Hong Kong Monetary Authority (HKMA), Hong Kong Institute for Monetary Research (HKIMR)")]
 FELLOWSHIPS = [("2026–", "Fellow, Asian Bureau of Finance and Economic Research (ABFER)"),
              ("2024–", "Executive Committee and Fellow, NTU Teaching Excellence Academy (TEA)"),
              ("2020–", "Fellow, NTU Institute of Science and Technology for Humanity (NISTH)")]
@@ -206,5 +207,6 @@ NEWS = [("Dec 2026", 'Keynote, 2026 Massey Sustainable Finance Conference, Queen
         ("2026", 'Became a Fellow of the Asian Bureau of Finance and Economic Research (ABFER)'),
         ("2026", 'Best Paper Award for Capital Markets, Craigs Investment Partners <a href="/awards/">(awards)</a>'),
         ("2026", 'Best Paper Award for Investments, Institute of Finance Professionals New Zealand (INFINZ) <a href="/awards/">(awards)</a>'),
+        ("Apr 2026", 'Invited talk, 2026 HKMA/CEPR Conference on Climate, Capital, and Policy, Hong Kong: “Assessing Ecological Integrity of Avoided Deforestation Projects”'),
         ("Mar 2026", 'On 8world <cite>Frontline</cite>, on fuel costs for businesses and drivers <a href="/media/">(media)</a>'),
         ("Jan 2026", 'Keynote, 10th China Accounting and Finance Conference, Hangzhou: “Sustainable Finance: ESG and ESG Investing” <a href="/talks/">(talks)</a>')]
