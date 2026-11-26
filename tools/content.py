@@ -147,8 +147,17 @@ def TALKS_HTML(dated):
                 ("2015", "Southwestern University of Finance and Economics; Zhejiang University"),
                 ("2014", "University of New South Wales; Nanyang Technological University; Hong Kong Polytechnic University; The Chinese University of Hong Kong; Xiamen University"),
                 ("2012", "The Chinese University of Hong Kong; The Hong Kong University of Science and Technology")]
+    policy = [("Apr 2026", "Invited speaker, 2026 HKMA–AoF/HKIMR–CEPR Conference on Climate, Capital, and Policy, Hong Kong", "Assessing Ecological Integrity of Avoided Deforestation Projects"),
+              ("Sep 2025", "Discussant, 20th Central Bank Conference on the Microstructure of Financial Markets, Hong Kong Academy of Finance / HKIMR, Hong Kong", "Patrik Sandås, “Do Smart Limit Orders Powered by Algorithms Encourage Liquidity Provision?”"),
+              ("Oct 2024", "Keynote, 10th Indonesian Finance Association International Conference, co-organised with the Indonesia Stock Exchange, Jakarta", "Investment Research in Emerging Capital Markets")]
+    policy_roles = [("2016, 2018, 2024", "Visiting Research Fellow, Hong Kong Monetary Authority (HKMA), Hong Kong Institute for Monetary and Financial Research (HKIMR)"),
+                    ("2015–", "Grant reviewer, HKMA / HKIMR"),
+                    ("2026", "<cite>Nature Climate Change</cite> paper on avoided-deforestation carbon projects, co-authored with Carlos T. Pérez-Brito of the World Bank"),
+                    ("2017", "HKIMR Working Paper: “Financial Flexibility and Corporate Cash Policy” (with Jarrad Harford and Chen Lin)")]
+    pol = dated([(d, f"{E(v)}<br><span class=\"meta\">{E(t)}</span>") for d, v, t in policy] + policy_roles)
     k = dated([(d, f"{E(v)}<br><span class=\"meta\">{E(t)}</span>") for d, v, t in keynotes])
-    return f"""<section aria-labelledby="h-k"><h2 id="h-k">Keynote speeches</h2>{k}</section>
+    return f"""<section aria-labelledby="h-pol"><h2 id="h-pol">Policy engagement</h2>{pol}</section>
+<section aria-labelledby="h-k"><h2 id="h-k">Keynote speeches</h2>{k}</section>
 <section aria-labelledby="h-s"><h2 id="h-s">Invited seminars</h2>{dated([(y, E(t)) for y, t in seminars])}</section>"""
 
 def MEDIA_HTML(dated):
@@ -208,6 +217,6 @@ NEWS = [("Dec 2026", 'Keynote, 2026 Massey Sustainable Finance Conference, Queen
         ("2026", 'Became a Fellow of the Asian Bureau of Finance and Economic Research (ABFER)'),
         ("2026", 'Best Paper Award for Capital Markets, Craigs Investment Partners <a href="/awards/">(awards)</a>'),
         ("2026", 'Best Paper Award for Investments, Institute of Finance Professionals New Zealand (INFINZ) <a href="/awards/">(awards)</a>'),
-        ("Apr 2026", 'Invited talk, 2026 HKMA/CEPR Conference on Climate, Capital, and Policy, Hong Kong: “Assessing Ecological Integrity of Avoided Deforestation Projects”'),
+        ("Apr 2026", 'Invited talk, 2026 HKMA/CEPR Conference on Climate, Capital, and Policy, Hong Kong: “Assessing Ecological Integrity of Avoided Deforestation Projects” <a href="/talks/">(talks)</a>'),
         ("Mar 2026", 'On 8world <cite>Frontline</cite>, on fuel costs for businesses and drivers <a href="/media/">(media)</a>'),
         ("Jan 2026", 'Keynote, 10th China Accounting and Finance Conference, Hangzhou: “Sustainable Finance: ESG and ESG Investing” <a href="/talks/">(talks)</a>')]
