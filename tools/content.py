@@ -83,8 +83,8 @@ def SERVICE_HTML(dated):
 <p>Program committees: European Finance Association Annual Meeting; SFS Cavalcade Asia-Pacific; FMA Asia/Pacific Conference; American Marketing Association Winter Academic Conference, etc.</p></section>
 <section aria-labelledby="h-u"><h2 id="h-u">University</h2>{dated(univ)}</section>
 <section aria-labelledby="h-g"><h2 id="h-g">Grant review and refereeing</h2>
-<p>Grant reviewer for the Swiss National Science Foundation, the Research Grants Council of Hong Kong, the Hong Kong Monetary Authority / Hong Kong Institute for Monetary Research, etc.</p>
-<p>Referee for journals including <cite>Review of Financial Studies</cite>, <cite>Management Science</cite>, <cite>The Accounting Review</cite>, <cite>Journal of Financial and Quantitative Analysis</cite>, <cite>Review of Finance</cite>, <cite>Contemporary Accounting Research</cite>, <cite>Research Policy</cite>, <cite>Journal of Public Economics</cite>, <cite>Journal of Development Economics</cite>, <cite>Journal of Corporate Finance</cite>, etc.</p></section>"""
+<p>Recent grant reviews for the Swiss National Science Foundation, the Research Grants Council of Hong Kong, the Hong Kong Monetary Authority / Hong Kong Institute for Monetary Research, etc.</p>
+<p>Recent refereeing for journals including <cite>Review of Financial Studies</cite>, <cite>Management Science</cite>, <cite>The Accounting Review</cite>, <cite>Journal of Financial and Quantitative Analysis</cite>, <cite>Review of Finance</cite>, <cite>Contemporary Accounting Research</cite>, <cite>Research Policy</cite>, <cite>Journal of Public Economics</cite>, <cite>Journal of Development Economics</cite>, <cite>Journal of Corporate Finance</cite>, etc.</p></section>"""
 
 def AWARDS_HTML(dated):
     research = [("2026", "Best Paper Award for Capital Markets, Craigs Investment Partners"),
