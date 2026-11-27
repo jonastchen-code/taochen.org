@@ -55,7 +55,8 @@ def TEACHING_HTML(dated):
 <section aria-labelledby="h-p"><h2 id="h-p">Doctoral advising</h2>
 <p>Graduated PhD students I supervised, with first placements:</p>
 {dated([(y, E(t)) for y, t in phd])}
-<p>I also serve on thesis committees in finance, economics and computer science at NTU, and as an external examiner. Prospective PhD students should apply through the <a href="https://www.ntu.edu.sg/business">Nanyang Business School</a> PhD programme in finance.</p></section>
+<p>Other NBS PhD graduates I have coauthored with: Xi Xiong, Kunru Zou, Pingyi Lou, Jing Rong Goh, Yuxi Wang, Yuzi Chen, Chin Hui Hsieh, Fangbo Si, Chongwu Xia, Endong Yang and others. Visiting PhD students at NBS I have coauthored with include Jinghua Wang, Beibei Wang, Tian Gao, Wenbin Hu and others.</p>
+<p>I also serve on thesis committees in finance, economics and computer science at NTU, and as an external PhD thesis examiner for the University of Hong Kong, the Chinese University of Hong Kong (Shenzhen), the University of Sydney, Griffith University, the University of Otago, etc. Prospective PhD students should apply through the <a href="https://www.ntu.edu.sg/business">Nanyang Business School</a> PhD programme in finance.</p></section>
 <p>Teaching awards are listed on the <a href="/awards/">Awards</a> page.</p>"""
 
 EDITORIAL = [("2022–", "Associate Editor, <cite>Financial Management</cite>"),  # FM first (Jonas, 15 Nov 2026)
