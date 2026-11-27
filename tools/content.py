@@ -55,7 +55,7 @@ def TEACHING_HTML(dated):
 <section aria-labelledby="h-p"><h2 id="h-p">Doctoral advising</h2>
 <p>Graduated PhD students I supervised, with first placements:</p>
 {dated([(y, E(t)) for y, t in phd])}
-<p>Other NBS Finance PhD graduates I have coauthored with: Kunru Zou, Pingyi Lou, Jing Rong Goh, Yuxi Wang, Yuzi Chen, Chin Hui Hsieh, Fangbo Si and Endong Yang.</p>
+<p>Other NBS Finance PhD graduates I have coauthored with: Kunru Zou, Pingyi Lou, Jing Rong Goh, Yuxi Wang, Yuzi Chen, Chin Hui Hsieh, Fangbo Si, Endong Yang and others.</p>
 <p>I also serve on thesis committees in finance, economics and computer science at NTU, and as an external examiner. Prospective PhD students should apply through the <a href="https://www.ntu.edu.sg/business">Nanyang Business School</a> PhD programme in finance.</p></section>
 <p>Teaching awards are listed on the <a href="/awards/">Awards</a> page.</p>"""
 
