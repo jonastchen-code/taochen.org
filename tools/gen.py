@@ -174,7 +174,7 @@ def home():
     body = f"""<div class="intro">
 <a class="portrait-link" href="{img_v('tao-chen-720.jpg')}" title="Open full-size photo"><img class="portrait" src="/assets/img/tao-chen.jpg" width="180" height="225" alt="Portrait of Tao (Jonas) Chen"></a>
 <h1 class="vh">{E(NAME)}</h1>
-<p class="role">Provost’s Chair Professor in Finance<br>Associate Professor in Finance<br>Nanyang Business School, Nanyang Technological University, Singapore</p>
+<p class="role">Provost’s Chair Professor in Finance<br>Associate Professor in Finance<br><span class="nw">Nanyang Business School,</span> <span class="nw">Nanyang Technological University, Singapore</span></p>
 {HOME_INTRO}
 <p class="contact contact-addr"><a href="mailto:jtchen@ntu.edu.sg">jtchen@ntu.edu.sg</a><br><span class="nw">ABS-06-106, 91 Nanyang Avenue, Singapore 639956</span></p>
 <p class="contact"><a href="{SCHOLAR}">Google Scholar</a> · <a href="{SSRN}">SSRN</a> · <a href="{ORCID_URL}">ORCID</a> · <a href="{NTU_PAGE}">NTU page</a></p>

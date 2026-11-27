@@ -154,4 +154,4 @@ footer.site p{margin:0 0 .3rem}
 p.pdf{margin:.6rem 0 0}
 .backnav{margin-top:2rem;padding-top:1rem;border-top:1px solid var(--rule);font-size:var(--fs-small)}
 article details{margin-top:.25rem}
-@media (max-width:370px){.contact-addr .nw{white-space:normal}}
+@media (max-width:370px){.contact-addr .nw,.role .nw{white-space:normal}}
